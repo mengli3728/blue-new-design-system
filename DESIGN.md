@@ -123,11 +123,11 @@ This design system was built from a Chinese enterprise back-office UI specificat
 | `--space-4` | 4px | Text-icon spacing inside graphic buttons |
 | `--space-8` | 8px | Compact inner padding, tight element spacing |
 | `--space-10` | 10px | Minimum safety distance between controls, between form rows |
-| `--space-12` | 12px | Inner padding of input fields, minimum module spacing |
-| `--space-16` | 16px | Compact card padding, table cell padding |
+| `--space-12` | 12px | Inner padding of input fields, default module spacing |
+| `--space-16` | 16px | Compact card padding |
 | `--space-18` | 18px | Minimum horizontal padding for generic buttons |
-| `--space-20` | 20px | Column gap, card gap, modal content padding |
-| `--space-24` | 24px | Maximum module spacing, maximum inner padding of content areas |
+| `--space-20` | 20px | Column gap, card gap, modal content padding, card padding, table cell margin |
+| `--space-24` | 24px | Maximum module spacing, maximum inner padding of content areas (override when more separation is needed) |
 | `--space-32` | 32px | Section spacing, panel margins |
 | `--space-40` | 40px | Large section separation |
 | `--space-224` | 224px | Default form control width at 1920px viewport |
@@ -139,14 +139,21 @@ This design system was built from a Chinese enterprise back-office UI specificat
 - Horizontal gap between columns: 20px
 - Inner padding of modal content area: 20px
 - Minimum gap between buttons: 10px
-- Default gap between cards: 20px
+- Default gap between cards: 12px
+- Default module spacing: 12px
+- Table cell margin (th/td): 20px
+- Card padding: 20px
+
+**Card padding enforcement:** All card components (`.card`, `.card-secondary`, and any container using card-level visual treatment) MUST use 20px inner padding (`var(--space-20)`). This is a non-negotiable system constraint — do not substitute arbitrary padding values — except when the user explicitly requests different card padding.
+
+**Module spacing enforcement:** The default spacing between modules, cards, and content sections MUST be 12px (`var(--space-12)`). This is a non-negotiable system constraint — do not substitute arbitrary spacing values — except when the user explicitly requests different module spacing. Use `--space-24` only as an override when more separation is explicitly needed.
 
 ### Border Radius
 
 | Token | Value | Usage |
 |-------|-------|-------|
 | `--radius-sm` | 4px | Tag, badge, small indicator |
-| `--radius-base` | 12px | Table cells, tree nodes |
+| `--radius-base` | 12px | Tree nodes |
 | `--radius-lg` | 16px | Modal, flyout panel, drawer |
 | `--radius-round` | 999px | Pills, status dots, circular avatars |
 
@@ -198,6 +205,22 @@ This design system was built from a Chinese enterprise back-office UI specificat
 
 All components must include: **Default, Hover, Focus, Active, Disabled** states.
 
+### Brand Logo — Mandatory Asset
+
+The Blue New design system ships **three logo variants** as standalone PNG files in the project root. All navigation chrome, app bars, branded headers, and shell surfaces **MUST** use the correct logo variant. Text replacements ("Blue New" as plain text in place of the logo image) are forbidden.
+
+| File | Height | Background | Usage |
+|------|--------|------------|-------|
+| `logo-white.png` | 28px | Dark / gradient (#2C7CF5→#57AAFE) | Gradient top navigation bar (`.nav-topbar`), dark sidebars |
+| `logo-default.png` | 28px | Light / white | Light navigation bar (`.nav-topbar-light`), sidebars, interior page headers, UI kit app shell |
+| `logo-blue.png` | 28px | Any | Print, single-tone contexts, monochrome exports |
+
+**CSS reference:** Use `.nav-brand-logo` class (height 28px, `width: auto`, `display: block`) for consistent sizing across all placements.
+
+**Logo-to-nav-items gap:** 20px (matching `--space-20`).
+
+**Brand asset enforcement:** Every navigation bar, sidebar, app shell, and branded surface MUST render the correct logo variant (`logo-white.png` on dark/gradient backgrounds, `logo-default.png` on light backgrounds, `logo-blue.png` for monochrome). Replacing the brand logo with plain text, inline SVG placeholders, or omitting it entirely is a non-negotiable system constraint — except when the user explicitly requests a different logo or no logo.
+
 ### 6.1 Navigation + Logo
 - **Gradient navigation bar** (`.nav-topbar`): full-width gradient bar, height 50px
   - Background: `linear-gradient(90deg, #2C7CF5 -1%, #57AAFE 100%)`
@@ -219,7 +242,7 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
   - Active and hover item background: `#ECF7FF` (`var(--color-primary-bg)`), active text `#2C7CF5`
   - Right-side action icons: 16px line-art black SVGs for notifications, settings, user
   - Action icon gap: 12px; last icon 20px from right edge
-- Brand logo: render `logo-white.png` at 28px height in the gradient top navigation bar (dark background). On light backgrounds (e.g. `.nav-topbar-light`) use `logo-default.png`. Use `logo-blue.png` for print or single-tone contexts.
+- Brand logo is **mandatory** — every navigation bar, sidebar, and app shell MUST render the correct logo variant (`logo-white.png` on dark/gradient backgrounds, `logo-default.png` on light backgrounds). Text replacement of the logo is not permitted.
 - Item transition: `--transition-base` (0.2s ease)
 - Click on a nav item switches the active state — only one item is active at a time
 - Level-1 menu selected: primary color background `#2C7CF5`, white text
@@ -247,10 +270,10 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 - Disabled state: reduced opacity with `cursor: not-allowed`
 
 ### 6.4 Tables
-- CSS wrapper: `.table-wrap` — border, 12px radius, overflow-x auto
+- CSS wrapper: `.table-wrap` — 0px radius (no rounding), overflow-x auto
 - Table width 100%, `border-collapse: collapse`
-- Headers: 14px / 500 Medium, `var(--text-body)`, padding 10px 16px, `var(--bg-page)` background
-- Body cells: 14px / 400 Regular, `var(--text-body)`, padding 10px 16px
+- Headers: 14px / 500 Medium, `var(--text-body)`, padding 10px 20px, `var(--bg-page)` background
+- Body cells: 14px / 400 Regular, `var(--text-body)`, padding 10px 20px
 - Row hover: `var(--color-primary-bg)` (#ECF7FF) on `table tr:hover td`
 - Sortable/filterable headers with click interaction
 - Status cells use `.badge-*` with colored indicators
@@ -258,7 +281,7 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 
 ### 6.5 Pagination
 - CSS class: `.pagination` — flex row, right-aligned, 8px gap
-- Page buttons: 32×32px, 14px / 400 Regular, 12px radius
+- Page buttons: 32×32px, 14px / 400 Regular, 8px radius
 - Active page: `var(--color-primary)` fill (#2C7CF5) + white text via `.pagination button.active`
 - Hover: primary border + primary text color
 - Disabled: reduced opacity
@@ -311,11 +334,12 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 - Supports horizontal step wizard and vertical timeline/task flow
 
 ### 6.11 Card
-- CSS classes: `.card` (container), `.card-title` (heading)
-- Card: `var(--bg-surface)` background, 1px `var(--border-color)` border, 12px radius, 20px padding
+- CSS classes: `.card` (一级, no border) · `.card-secondary` (二级, with border) · `.card-title` (heading)
+- 一级卡片: `var(--bg-surface)` background, no border, 12px radius, 20px padding
+- 二级卡片: `var(--bg-surface)` background, 1px `var(--border-color)` border, 12px radius, 20px padding
 - Title: 16px / 600 Medium, `var(--text-body)`, 16px bottom margin
 - Card content: max 3 lines, truncated with ellipsis
-- Default card gap: 20px
+- Default card gap: 12px
 
 ### 6.12 Additional Components
 - **Breadcrumb:** `.breadcrumb` — flex row, 13px/300, `var(--text-secondary)`, `"/"` separator, current item in `var(--text-heading)`/300, link hover `var(--color-primary)`
@@ -384,6 +408,7 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 - ❌ Changing the primary color ratio or arbitrarily adding new colors
 - ❌ Excessive gradients where not appropriate
 - ❌ Ignoring safety margins (less than 10px between controls, less than 20px in content areas)
+- ❌ Replacing the brand logo with plain text, inline SVG placeholder, or generic icon in navigation bars, sidebars, or app shells — brand asset usage is a mandatory system rule on par with the type scale, card padding, and module spacing
 - ❌ Generic AI-slop aesthetics (aggressive purple gradients, gratuitous emoji, rounded cards with left-border accent)
 
 ### Interaction Anti-patterns
@@ -393,6 +418,8 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 - ❌ Navigation menus with too many levels not collapsed — use scroll arrows on overflow
 - ❌ Tables extending indefinitely without scrollbars or breaking layout
 - ❌ Using font sizes, weights, or text colors outside the defined type scale (20px/16px/14px/13px/12px with assigned weight and color tokens)
+- ❌ Using card padding values other than 20px (`--space-20`) — this is a mandatory system rule on par with the type scale
+- ❌ Using module spacing values other than 12px (`--space-12`) — this is a mandatory system rule on par with the type scale and card padding
 
 ### Code / Architecture Anti-patterns
 - ❌ Merging multiple independent screens into a single HTML file — each screen is a separate route

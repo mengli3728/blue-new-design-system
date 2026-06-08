@@ -19,8 +19,7 @@ const tableStyles = {
   tableWrap: {
     width: '100%',
     overflowX: 'auto',
-    border: '1px solid var(--border-color)',
-    borderRadius: 'var(--radius-base)',
+    borderRadius: 0,
     background: 'var(--bg-surface)',
   },
   table: {
@@ -33,7 +32,7 @@ const tableStyles = {
     fontWeight: 500,
     color: 'var(--text-body)',
     textAlign: 'left',
-    padding: '10px 16px',
+    padding: '10px 20px',
     borderBottom: '1px solid var(--border-color)',
     background: 'var(--bg-page)',
     whiteSpace: 'nowrap',
@@ -43,7 +42,7 @@ const tableStyles = {
   td: {
     fontSize: 13,
     color: 'var(--text-body)',
-    padding: '10px 16px',
+    padding: '10px 20px',
     borderBottom: '1px solid var(--border-color)',
   },
   badge: (color) => ({
@@ -77,7 +76,7 @@ const tableStyles = {
     minWidth: 32,
     height: 32,
     border: '1px solid ' + (active ? 'var(--color-primary)' : 'var(--border-color)'),
-    borderRadius: 'var(--radius-base)',
+    borderRadius: 8,
     background: active ? 'var(--color-primary)' : 'var(--bg-surface)',
     color: active ? '#fff' : 'var(--text-body)',
     cursor: 'pointer',

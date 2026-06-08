@@ -4,9 +4,9 @@ This file is the first thing an agent reads when using the Blue New Design Syste
 
 ---
 
-## Rule 1 — Brand Logo is mandatory
+## Rule 1 — Brand Logo is mandatory (same level as type scale)
 
-Generated HTML prototypes must include the Blue New brand logo in navigation bars. Use `logo-default.png` for light surfaces, `logo-white.png` for dark backgrounds, `logo-blue.png` for single-tone contexts. Do not substitute inline SVG placeholders, text-only brand marks, or omit the logo entirely.
+Generated HTML prototypes must include the Blue New brand logo in navigation bars. Use `logo-default.png` for light surfaces, `logo-white.png` for dark backgrounds, `logo-blue.png` for single-tone contexts. Do not substitute inline SVG placeholders, text-only brand marks, or omit the logo entirely. This is a non-negotiable system constraint — on par with the type scale, card padding, and module spacing rules.
 
 **Exception:** Only when the user explicitly requests "replace logo", "no logo", "use a different logo", or equivalent language.
 
@@ -32,8 +32,10 @@ Do not use arbitrary font sizes, weights, or text colors outside this scale. The
 
 ## Source
 
-- DESIGN.md §3 (Typography)
-- DESIGN.md §9 (Anti-patterns — type scale override is prohibited)
+- DESIGN.md §6 "Brand Logo — Mandatory Asset" + Brand asset enforcement paragraph
+- DESIGN.md §9 (Anti-patterns — brand logo replacement is prohibited)
 - SKILL.md "How to use" (Hard Rule sections)
-- colors_and_type.css (token definitions)
-- preview/typography-specimens.html (visual reference)
+- colors_and_type.css (`.nav-brand-logo` class)
+- preview/spacing-tokens.html (Density Rules — Brand logo ★ row)
+- preview/brand-assets.html (visual reference)
+- Project root logo-*.png files

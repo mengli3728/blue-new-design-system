@@ -14,7 +14,7 @@
     .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
     .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
     .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
-    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
     <h1>Blue New — Cards</h1>
     <div class="desc">Content card patterns for dashboards, lists, and panels.</div>
 
-    <div class="section-title">Standard Card</div>
+    <div class="section-title">一级卡片 — 无边框</div>
     <div class="card-grid">
       <div class="card">
         <div class="card-title">Station Overview</div>
@@ -36,9 +36,26 @@
       <div class="card">
         <div class="card-title">Alerts Summary</div>
         <div style="font-size:var(--text-sm);color:var(--text-body);line-height:1.5;">
-          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-danger);">● Critical</span><span>2</span></div>
-          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-warning);">● Warning</span><span>5</span></div>
-          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-success);">● Resolved</span><span>18</span></div>
+          2 critical alerts · 5 warnings · 18 resolved · all within threshold
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">二级卡片 — 带边框</div>
+    <div class="card-grid">
+      <div class="card-secondary">
+        <div class="card-title">Station Overview</div>
+        <div style="font-size:var(--text-sm);color:var(--text-body);line-height:1.5;">
+          12 active stations with 47 devices reporting normal status across 4 geographic regions.
+        </div>
+        <div style="margin-top:16px;display:flex;gap:10px;">
+          <button class="btn btn-primary" style="height:28px;font-size:12px;padding:0 12px;">View Details</button>
+        </div>
+      </div>
+      <div class="card-secondary">
+        <div class="card-title">Alerts Summary</div>
+        <div style="font-size:var(--text-sm);color:var(--text-body);line-height:1.5;">
+          2 critical alerts · 5 warnings · 18 resolved · all within threshold
         </div>
       </div>
     </div>
@@ -60,9 +77,10 @@
     <div class="section-title">Specifications</div>
     <table class="spec-table">
       <tr><th>Property</th><th>Value</th></tr>
-      <tr><td>CSS class</td><td><code>.card</code> · <code>.card-title</code></td></tr>
+      <tr><td>CSS class</td><td><code>.card</code> (一级) · <code>.card-secondary</code> (二级) · <code>.card-title</code></td></tr>
       <tr><td>Card padding</td><td>20px</td></tr>
-      <tr><td>Card gap</td><td>20px</td></tr>
+      <tr><td>Card gap</td><td>12px</td></tr>
+      <tr><td>Card border</td><td>一级: 0 · 二级: 1px solid var(--border-color)</td></tr>
       <tr><td>Card radius</td><td>12px (--radius-base)</td></tr>
       <tr><td>Title font</td><td>16px · 600 Medium · var(--text-body)</td></tr>
       <tr><td>Body font</td><td>14px · 400 Regular · var(--text-body)</td></tr>

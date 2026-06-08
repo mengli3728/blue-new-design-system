@@ -247,8 +247,7 @@
 .table-wrap {
   width: 100%;
   overflow-x: auto;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 0;
   background: var(--bg-surface);
 }
 table {
@@ -261,7 +260,7 @@ table th {
   font-weight: var(--weight-medium);
   color: var(--text-body);
   text-align: left;
-  padding: 14px 16px;
+  padding: 10px 20px;
   border-bottom: var(--border-width) solid var(--border-color);
   background: var(--bg-page);
   white-space: nowrap;
@@ -269,7 +268,7 @@ table th {
 table td {
   font-size: var(--text-sm);
   color: var(--text-body);
-  padding: 14px 16px;
+  padding: 10px 20px;
   border-bottom: var(--border-width) solid var(--border-color);
 }
 table tr:hover td {
@@ -278,6 +277,12 @@ table tr:hover td {
 
 /* Card */
 .card {
+  background: var(--bg-surface);
+  border: 0;
+  border-radius: 8px;
+  padding: var(--space-20);
+}
+.card-secondary {
   background: var(--bg-surface);
   border: var(--border-width) solid var(--border-color);
   border-radius: 8px;
@@ -472,6 +477,8 @@ table tr:hover td {
   opacity: 1;
 }
 
+/* Brand logo — mandatory asset for all navigation chrome. Use logo-white.png
+   on dark/gradient backgrounds, logo-default.png on light backgrounds. */
 .nav-brand-logo {
   height: 28px;
   width: auto;
@@ -776,7 +783,7 @@ table tr:hover td {
   display: flex;
   align-items: center;
   gap: var(--space-10);
-  padding: 14px 16px;
+  padding: 10px 20px;
   font-size: var(--text-sm);
   color: var(--text-body);
   cursor: pointer;

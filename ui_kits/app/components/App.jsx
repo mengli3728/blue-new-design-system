@@ -68,6 +68,7 @@ const appStyles = {
 
 function App() {
   const [section, setSection] = React.useState('dashboard');
+  const topBarLogoStyles = { height: 28, width: 'auto', display: 'block' };
 
   const sectionTitle = {
     dashboard: 'Dashboard',
@@ -95,7 +96,7 @@ function App() {
     /* Top bar */
     React.createElement('div', { style: appStyles.topBar },
       React.createElement('div', { style: appStyles.topBarLeft },
-        React.createElement('span', { style: appStyles.breadcrumb }, 'Blue New'),
+        React.createElement('img', { src: '../../logo-default.png', alt: 'Blue New', style: topBarLogoStyles }),
         React.createElement('span', { style: { color: 'var(--border-color)' } }, '/'),
         React.createElement('span', { style: appStyles.breadcrumbCurrent }, sectionTitle[section]),
       ),
