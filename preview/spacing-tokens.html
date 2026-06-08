@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Spacing Tokens</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .token-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .token-label { min-width: 100px; font-size: 13px; color: var(--text-body); font-family: var(--font-mono); }
+    .token-value { min-width: 60px; font-size: 12px; color: var(--text-label); font-family: var(--font-mono); text-align: right; }
+    .token-bar-wrap { flex: 1; height: 32px; display: flex; align-items: center; }
+    .token-bar { height: 12px; background: var(--color-primary); border-radius: 2px; min-width: 2px; }
+    .density-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .density-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .density-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Spacing Tokens</h1>
+    <div class="desc">Spacing scale from micro (2px) to layout (224px). Bar width shows relative magnitude.</div>
+
+    <div class="section-title">Spacing Scale</div>
+
+    <div class="token-row">
+      <div class="token-label">--space-2</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:2px"></div></div>
+      <div class="token-value">2px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-4</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:4px"></div></div>
+      <div class="token-value">4px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-8</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:12px"></div></div>
+      <div class="token-value">8px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-10</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:20px"></div></div>
+      <div class="token-value">10px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-12</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:30px"></div></div>
+      <div class="token-value">12px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-16</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:48px"></div></div>
+      <div class="token-value">16px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-18</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:56px"></div></div>
+      <div class="token-value">18px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-20</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:68px"></div></div>
+      <div class="token-value">20px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-24</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:80px"></div></div>
+      <div class="token-value">24px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-32</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:120px"></div></div>
+      <div class="token-value">32px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-40</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:160px"></div></div>
+      <div class="token-value">40px</div>
+    </div>
+    <div class="token-row">
+      <div class="token-label">--space-224</div>
+      <div class="token-bar-wrap"><div class="token-bar" style="width:224px"></div></div>
+      <div class="token-value">224px</div>
+    </div>
+
+    <div class="section-title">Density Rules</div>
+    <table class="density-table">
+      <tr><th>Context</th><th>Rule</th></tr>
+      <tr><td>Form rows (vertical)</td><td>10px gap</td></tr>
+      <tr><td>Columns (horizontal)</td><td>20px gap</td></tr>
+      <tr><td>Modal content padding</td><td>20px</td></tr>
+      <tr><td>Button horizontal padding</td><td>18px</td></tr>
+      <tr><td>Min gap between buttons</td><td>10px</td></tr>
+      <tr><td>Default card gap</td><td>20px</td></tr>
+      <tr><td>Input inner padding</td><td>12px left/right</td></tr>
+      <tr><td>Form control default width</td><td>224px (at 1920px viewport)</td></tr>
+      <tr><td>Form control min width</td><td>136px</td></tr>
+    </table>
+  </div>
+</body>
+</html>

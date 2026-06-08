@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Loading & Empty States</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .demo-group { margin-bottom: 32px; }
+    .demo-label { font-size: 13px; color: var(--text-label); font-family: var(--font-mono); margin-bottom: 12px; }
+    .state-demo { background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-base); padding: 48px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .inline-loading { display: flex; align-items: center; gap: 12px; padding: 20px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-base); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Loading & Empty States</h1>
+    <div class="desc">Spinner, page loading overlay, inline loading, and empty state placeholder.</div>
+
+    <div class="section-title">Spinner</div>
+    <div class="demo-group">
+      <div class="demo-label">Page loading spinner</div>
+      <div class="state-demo">
+        <div class="spinner"></div>
+        <div style="font-size:var(--text-sm);color:var(--text-secondary);">Loading station data...</div>
+      </div>
+    </div>
+
+    <div class="section-title">Inline Loading</div>
+    <div class="demo-group">
+      <div class="demo-label">Card / component-level loading</div>
+      <div class="inline-loading">
+        <div style="width:20px;height:20px;border:2px solid var(--border-color);border-top-color:var(--color-primary);border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0;"></div>
+        <div style="flex:1;">
+          <div style="font-size:var(--text-sm);color:var(--text-body);font-weight:500;">Refreshing device data</div>
+          <div style="font-size:var(--text-xs);color:var(--text-label);">Fetching 47 devices from 4 stations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Empty State</div>
+    <div class="demo-group">
+      <div class="demo-label">No data placeholder</div>
+      <div class="state-demo">
+        <div style="font-size:40px;color:var(--text-hint);margin-bottom:4px;">—</div>
+        <div style="font-size:var(--text-sm);color:var(--text-secondary);">No devices found</div>
+        <div style="font-size:var(--text-13);color:var(--text-label);margin-bottom:8px;">Adjust filters or create a new station</div>
+        <button class="btn btn-primary" onclick="alert('Action triggered')">Add Device</button>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Spinner</th><th>Inline Loading</th></tr>
+      <tr><td>CSS class</td><td><code>.spinner</code></td><td>Inline style</td></tr>
+      <tr><td>Size</td><td>32px · border 3px</td><td>20px · border 2px</td></tr>
+      <tr><td>Speed</td><td colspan="2">0.6s rotation</td></tr>
+      <tr><td>Colors</td><td colspan="2">Border: var(--border-color) · Top: var(--color-primary)</td></tr>
+      <tr><td>Animation</td><td colspan="2"><code>@keyframes spin { to { transform: rotate(360deg); } }</code></td></tr>
+      <tr><td>Usage</td><td>Full-page or card loading</td><td>Component-level refresh</td></tr>
+    </table>
+  </div>
+</body>
+</html>

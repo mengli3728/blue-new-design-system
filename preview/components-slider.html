@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Slider & Progress</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 600px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .demo-group { margin-bottom: 28px; }
+    .demo-label { font-size: 13px; color: var(--text-label); font-family: var(--font-mono); margin-bottom: 10px; }
+    .demo-area { background: var(--bg-page); border-radius: var(--radius-base); padding: 24px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Slider & Progress</h1>
+    <div class="desc">Progress bars and range sliders for status and input.</div>
+
+    <div class="section-title">Progress Bar</div>
+    <div class="demo-group">
+      <div class="demo-label">Primary (default)</div>
+      <div class="demo-area">
+        <div style="display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-label);margin-bottom:6px;">
+          <span>Data synchronization</span>
+          <span>73%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:73%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-group">
+      <div class="demo-label">Success / Warning variants</div>
+      <div class="demo-area" style="display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-label);margin-bottom:6px;">
+            <span>Completed</span><span>100%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill success" style="width:100%;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-label);margin-bottom:6px;">
+            <span>Capacity utilization</span><span>68%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill warning" style="width:68%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Slider</div>
+    <div class="demo-group">
+      <div class="demo-label">Range slider (visual demo)</div>
+      <div class="demo-area">
+        <div style="display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-label);margin-bottom:8px;">
+          <span>Output threshold</span>
+          <span>40%</span>
+        </div>
+        <div class="slider-track">
+          <div class="slider-fill" style="width:40%;"></div>
+          <div class="slider-thumb" style="left:40%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Progress Bar</th><th>Slider</th></tr>
+      <tr><td>CSS class</td><td><code>.progress-bar</code> · <code>.progress-fill</code></td><td><code>.slider-track</code> · <code>.slider-fill</code> · <code>.slider-thumb</code></td></tr>
+      <tr><td>Track height</td><td>8px</td><td>4px</td></tr>
+      <tr><td>Thumb size</td><td>—</td><td>16px circle</td></tr>
+      <tr><td>Fill color</td><td>var(--color-primary) · success/warning variants</td><td>var(--color-primary)</td></tr>
+      <tr><td>Border radius</td><td colspan="2">999px (--radius-round)</td></tr>
+      <tr><td>Transition</td><td>0.2s ease on width</td><td>—</td></tr>
+    </table>
+  </div>
+</body>
+</html>

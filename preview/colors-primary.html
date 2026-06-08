@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Primary Colors</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: #fff; font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    p { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .swatch { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    .swatch-item { border-radius: var(--radius-base); overflow: hidden; border: 1px solid var(--border-color); }
+    .swatch-bar { height: 80px; }
+    .swatch-info { padding: 12px 16px; background: var(--bg-surface); }
+    .swatch-name { font-size: 14px; font-weight: 500; color: var(--text-heading); }
+    .swatch-value { font-size: 12px; color: var(--text-label); font-family: var(--font-mono); margin-top: 2px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .dot-row { display: flex; gap: 24px; flex-wrap: wrap; }
+    .dot-item { display: flex; align-items: center; gap: 10px; }
+    .dot { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--border-color); }
+    .dot-label { font-size: 13px; color: var(--text-body); }
+    .dot-value { font-size: 11px; color: var(--text-label); font-family: var(--font-mono); }
+    .text-row { display: flex; gap: 32px; flex-wrap: wrap; }
+    .text-swatch { padding: 16px; border: 1px solid var(--border-color); border-radius: var(--radius-base); min-width: 160px; }
+    .text-swatch-label { font-size: 12px; color: var(--text-label); margin-bottom: 6px; font-family: var(--font-mono); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Primary Color</h1>
+    <p>The primary blue that drives navigation, actions, and focus states across the system.</p>
+
+    <div class="swatch">
+      <div class="swatch-item">
+        <div class="swatch-bar" style="background:#2C7CF5"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary</div>
+          <div class="swatch-value">#2C7CF5 · oklch(56% 0.18 250)</div>
+        </div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch-bar" style="background:#4091F9"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary Hover</div>
+          <div class="swatch-value">#4091F9 · oklch(62% 0.16 250)</div>
+        </div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch-bar" style="background:#DBE9FF"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary Light</div>
+          <div class="swatch-value">#DBE9FF · oklch(90% 0.06 250)</div>
+        </div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch-bar" style="background:#ECF7FF"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary BG</div>
+          <div class="swatch-value">#ECF7FF · oklch(95% 0.03 240)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Semantic Colors</div>
+    <div class="dot-row">
+      <div class="dot-item"><div class="dot" style="background:#00D6A5"></div><div><div class="dot-label">Success</div><div class="dot-value">#00D6A5</div></div></div>
+      <div class="dot-item"><div class="dot" style="background:#FAAD14"></div><div><div class="dot-label">Warning</div><div class="dot-value">#FAAD14</div></div></div>
+      <div class="dot-item"><div class="dot" style="background:#FF5959"></div><div><div class="dot-label">Danger</div><div class="dot-value">#FF5959</div></div></div>
+    </div>
+
+    <div class="section-title">Text Colors</div>
+    <div class="text-row">
+      <div class="text-swatch" style="background:#000000;color:#fff"><div class="text-swatch-label" style="color:rgba(255,255,255,0.6)">--text-heading</div>#000000</div>
+      <div class="text-swatch" style="background:#4A4A4A;color:#fff"><div class="text-swatch-label" style="color:rgba(255,255,255,0.6)">--text-body</div>#4A4A4A</div>
+      <div class="text-swatch" style="background:#666666;color:#fff"><div class="text-swatch-label" style="color:rgba(255,255,255,0.6)">--text-secondary</div>#666666</div>
+      <div class="text-swatch" style="background:#BDBDBD"><div class="text-swatch-label">--text-hint</div>#BDBDBD</div>
+      <div class="text-swatch" style="background:#999999;color:#fff"><div class="text-swatch-label" style="color:rgba(255,255,255,0.6)">--text-label</div>#999999</div>
+    </div>
+
+    <div class="section-title">Border</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <div style="padding:12px 20px;border:1px solid #E5E9F0;border-radius:var(--radius-base);font-size:13px;color:var(--text-body);">--border-color #E5E9F0</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Cards</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-page); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Cards</h1>
+    <div class="desc">Content card patterns for dashboards, lists, and panels.</div>
+
+    <div class="section-title">Standard Card</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title">Station Overview</div>
+        <div style="font-size:var(--text-sm);color:var(--text-body);line-height:1.5;">
+          12 active stations with 47 devices reporting normal status across 4 geographic regions.
+        </div>
+        <div style="margin-top:16px;display:flex;gap:10px;">
+          <button class="btn btn-primary" style="height:28px;font-size:12px;padding:0 12px;">View Details</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Alerts Summary</div>
+        <div style="font-size:var(--text-sm);color:var(--text-body);line-height:1.5;">
+          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-danger);">● Critical</span><span>2</span></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-warning);">● Warning</span><span>5</span></div>
+          <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--color-success);">● Resolved</span><span>18</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">KPI Stat Card</div>
+    <div class="card-grid">
+      <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-base);padding:20px 16px;">
+        <div style="font-size:12px;color:var(--text-label);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Active Stations</div>
+        <div style="font-size:28px;font-weight:500;color:var(--text-heading);line-height:1.2;font-variant-numeric:tabular-nums;">12</div>
+        <div style="font-size:12px;color:var(--color-success);margin-top:4px;">+2 this month</div>
+      </div>
+      <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-base);padding:20px 16px;">
+        <div style="font-size:12px;color:var(--text-label);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Total Output</div>
+        <div style="font-size:28px;font-weight:500;color:var(--text-heading);line-height:1.2;font-variant-numeric:tabular-nums;">12,345</div>
+        <div style="font-size:12px;color:var(--text-label);margin-top:4px;">MWh this period</div>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.card</code> · <code>.card-title</code></td></tr>
+      <tr><td>Card padding</td><td>20px</td></tr>
+      <tr><td>Card gap</td><td>20px</td></tr>
+      <tr><td>Card radius</td><td>12px (--radius-base)</td></tr>
+      <tr><td>Title font</td><td>16px · 600 Medium · var(--text-body)</td></tr>
+      <tr><td>Body font</td><td>14px · 400 Regular · var(--text-body)</td></tr>
+      <tr><td>Max lines</td><td>3 lines, truncated with ellipsis</td></tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Modal & Dialog</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 700px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .modal-demo { background: var(--bg-page); border-radius: var(--radius-base); padding: 32px; display: grid; place-items: center; min-height: 440px; position: relative; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Modal & Dialog</h1>
+    <div class="desc">Modal dialog with overlay, header, body, and footer.</div>
+
+    <div class="section-title">Modal Example</div>
+    <div class="modal-demo">
+      <div class="modal" style="position:static;box-shadow:var(--shadow-lg);">
+        <div class="modal-header">
+          <h3 class="modal-title">Create New Station</h3>
+          <button class="modal-close" onclick="alert('Close triggered')">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-control" style="margin-bottom:var(--space-20);">
+            <label class="form-label" style="margin-bottom:0;">Station Name</label>
+            <input class="form-input" type="text" placeholder="e.g. North District Station">
+          </div>
+          <div class="form-control">
+            <label class="form-label" style="margin-bottom:0;">Device Count</label>
+            <input class="form-input" type="number" placeholder="0">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="alert('Cancel')">Cancel</button>
+          <button class="btn btn-primary" onclick="alert('Confirmed')">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Usage Guidelines</div>
+    <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-base);padding:20px;font-size:14px;color:var(--text-body);line-height:1.6;">
+      <p><strong>Overlay:</strong> Use <code>.modal-overlay</code> for full-screen backdrop with <code>var(--bg-overlay)</code> (rgba(0,0,0,0.5)).</p>
+      <p><strong>Modal sizing:</strong> Default width 480px, max-width 90vw, max-height 80vh. Aspect ratio recommended 4:3 or 2:1.</p>
+      <p><strong>Structure:</strong> <code>.modal-header</code> (title + close, 12px padding top/bottom) → full-width divider (<code>var(--border-color)</code>) → <code>.modal-body</code> (scrollable content) → <code>.modal-footer</code> (actions, right-aligned).</p>
+      <p><strong>Toast:</strong> Auto-dismiss notifications after 3 seconds.</p>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS classes</td><td><code>.modal-overlay</code> · <code>.modal</code> · <code>.modal-header</code> · <code>.modal-title</code> · <code>.modal-body</code> · <code>.modal-footer</code></td></tr>
+      <tr><td>Border radius</td><td>16px (--radius-lg)</td></tr>
+      <tr><td>Shadow</td><td>0 4px 16px rgba(0,0,0,0.18) (--shadow-lg)</td></tr>
+      <tr><td>Header padding</td><td>12px 24px 12px + border-bottom divider</td></tr>
+      <tr><td>Body padding</td><td>20px 24px</td></tr>
+      <tr><td>Footer padding</td><td>20px + border-top divider (var(--border-color))</td></tr>
+      <tr><td>Close button</td><td>24px × 24px, circular hover</td></tr>
+    </table>
+  </div>
+</body>
+</html>

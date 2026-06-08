@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue New — Button Components</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .variant-group { margin-bottom: 32px; }
+    .variant-label { font-size: 13px; color: var(--text-label); margin-bottom: 10px; font-family: var(--font-mono); }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Blue New — Buttons</h1>
+    <div class="desc">All button variants with default, hover, and disabled states.</div>
+
+    <div class="variant-group">
+      <div class="variant-label">Primary Button</div>
+      <div class="row">
+        <button class="btn btn-primary">Create Station</button>
+        <button class="btn btn-primary" disabled>Create Station</button>
+      </div>
+    </div>
+
+    <div class="variant-group">
+      <div class="variant-label">Secondary Button</div>
+      <div class="row">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-secondary" disabled>Cancel</button>
+      </div>
+    </div>
+
+    <div class="variant-group">
+      <div class="variant-label">Danger Button</div>
+      <div class="row">
+        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" disabled>Delete</button>
+      </div>
+    </div>
+
+    <div class="variant-group">
+      <div class="variant-label">Ghost Button</div>
+      <div class="row">
+        <button class="btn btn-ghost">More</button>
+        <button class="btn btn-ghost" disabled>More</button>
+      </div>
+    </div>
+
+    <div class="variant-group">
+      <div class="variant-label">Icon Button (text + icon)</div>
+      <div class="row">
+        <button class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Add Device
+        </button>
+        <button class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M4 3v-1a1 1 0 011-1h4a1 1 0 011 1v1M3 5l1 7h6l1-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="section-title">Button Specs</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>Horizontal padding</td><td>18px</td></tr>
+      <tr><td>Height</td><td>36px</td></tr>
+      <tr><td>Icon-text gap</td><td>4px</td></tr>
+      <tr><td>Min button gap</td><td>10px</td></tr>
+      <tr><td>Border radius</td><td>6px (--radius-base)</td></tr>
+      <tr><td>Font</td><td>14px / 400</td></tr>
+      <tr><td>Primary bg</td><td>#2C7CF5 → #4091F9 hover</td></tr>
+      <tr><td>Secondary</td><td>White fill, #2C7CF5 stroke, #EBF3FF hover fill</td></tr>
+      <tr><td>Toolbar overflow</td><td>> 8 buttons → "More" dropdown</td></tr>
+    </table>
+  </div>
+</body>
+</html>

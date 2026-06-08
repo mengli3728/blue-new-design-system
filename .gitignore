@@ -1,0 +1,25 @@
+# Blue New Design System — .gitignore
+
+# Open Design internal state
+*.artifact.json
+*.tmp
+
+# Context/evidence (source material, not deliverables)
+context/
+
+# Upstream source files (already captured in DESIGN.md)
+assets_deepseek_markdown_*.md
+
+# Temp screenshots from project setup
+mq1s9wpw-*.png
+mq1rpzr8-*.png
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.idea/
+.vscode/
+*.swp
+*.swo
