@@ -1,20 +1,20 @@
-# Blue New Design System
+# JoinBright-Blue Design System
 
 > Category: Custom
 > Surface: web
 > Version: 1.0.0
 
-Blue New — an Internet-style design system for enterprise-level back-office and energy/power control products. The system prioritizes simplicity, brightness, neutrality, and practicality, designed for efficient handling of complex data with clear information hierarchy and operational clarity.
+JoinBright-Blue — an Internet-style design system for enterprise-level back-office and energy/power control products. The system prioritizes simplicity, brightness, neutrality, and practicality, designed for efficient handling of complex data with clear information hierarchy and operational clarity.
 
 ## Source Context
 
-This design system was built from a Chinese enterprise back-office UI specification captured during project setup (`assets_deepseek_markdown_20260604_eb6df0.md`). No linked GitHub repositories, local code folders, or Figma files were provided during setup. The source specification describes an Internet-style (互联网风格) interface for energy/power control products with dense data tables, tree navigation, multi-level menus, and status-driven workflows. The canonical design system title is "Blue New Design System."
+This design system was built from a Chinese enterprise back-office UI specification captured during project setup (`assets_deepseek_markdown_20260604_eb6df0.md`). No linked GitHub repositories, local code folders, or Figma files were provided during setup. The source specification describes an Internet-style (互联网风格) interface for energy/power control products with dense data tables, tree navigation, multi-level menus, and status-driven workflows. The canonical design system title is "JoinBright-Blue Design System."
 
 ---
 
 ## Product Context
 
-**Product name:** Blue New
+**Product name:** JoinBright-Blue
 **Domain:** Enterprise back-office / energy power control / industrial IoT
 **Target surface:** Web (1920×1080 baseline, responsive)
 **Primary users:** Station operators, device monitoring engineers, system administrators
@@ -207,7 +207,7 @@ All components must include: **Default, Hover, Focus, Active, Disabled** states.
 
 ### Brand Logo — Mandatory Asset
 
-The Blue New design system ships **three logo variants** as standalone PNG files in the project root. All navigation chrome, app bars, branded headers, and shell surfaces **MUST** use the correct logo variant. Text replacements ("Blue New" as plain text in place of the logo image) are forbidden.
+The JoinBright-Blue design system ships **three logo variants** as standalone PNG files in the project root. All navigation chrome, app bars, branded headers, and shell surfaces **MUST** use the correct logo variant. Text replacements ("JoinBright-Blue" as plain text in place of the logo image) are forbidden.
 
 | File | Height | Background | Usage |
 |------|--------|------------|-------|

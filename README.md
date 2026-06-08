@@ -1,4 +1,4 @@
-# Blue New Design System
+# JoinBright-Blue Design System
 
 > **Version:** 1.0.0 | **Category:** Custom | **Surface:** Web | **Baseline:** 1920×1080
 
@@ -8,11 +8,11 @@ An Internet-style (互联网风格) design system for enterprise-level back-offi
 
 ## Product Overview
 
-**Blue New** is an enterprise back-office design system built for energy/power control and industrial IoT (IIoT) applications. The design language was extracted from a Chinese enterprise back-office UI specification and organized into a reusable Claude Design-style package.
+**JoinBright-Blue** is an enterprise back-office design system built for energy/power control and industrial IoT (IIoT) applications. The design language was extracted from a Chinese enterprise back-office UI specification and organized into a reusable Claude Design-style package.
 
 ### Product definition
 
-Blue New powers monitoring dashboards, station/device management consoles, work-order tracking systems, and configuration panels for operators and system administrators. Every design decision prioritizes information density, operational clarity, and professional restraint over decoration.
+JoinBright-Blue powers monitoring dashboards, station/device management consoles, work-order tracking systems, and configuration panels for operators and system administrators. Every design decision prioritizes information density, operational clarity, and professional restraint over decoration.
 
 ### Primary UI Surfaces
 
@@ -35,7 +35,7 @@ Blue New powers monitoring dashboards, station/device management consoles, work-
 
 ### Source Evidence
 
-This design system was constructed from a Chinese enterprise back-office UI specification file (`assets_deepseek_markdown_20260604_eb6df0.md`) captured during project setup. The specification describes an Internet-style (互联网风格) interface for energy/power control products. The canonical name recorded during setup is "Blue New Design System."
+This design system was constructed from a Chinese enterprise back-office UI specification file (`assets_deepseek_markdown_20260604_eb6df0.md`) captured during project setup. The specification describes an Internet-style (互联网风格) interface for energy/power control products. The canonical name recorded during setup is "JoinBright-Blue Design System."
 
 - Setup metadata: Custom category, Web surface, version 1.0.0
 - Evidence snapshots: context/source-context.md
@@ -170,7 +170,7 @@ Open preview/*.html files sequentially in the Design System tab. Recommended ord
 
 ## UI Kit
 
-The UI kit at `ui_kits/app/` is a runnable React 18 demo applying Blue New tokens to an enterprise dashboard. It loads `../../colors_and_type.css`, React 18 with Babel standalone, and composes 5 modular JSX components from `ui_kits/app/components/`:
+The UI kit at `ui_kits/app/` is a runnable React 18 demo applying JoinBright-Blue tokens to an enterprise dashboard. It loads `../../colors_and_type.css`, React 18 with Babel standalone, and composes 5 modular JSX components from `ui_kits/app/components/`:
 
 - App (components/App.jsx): Shell composing Sidebar, DashboardPanel, DataTable, FormPanel
 - Sidebar (components/Sidebar.jsx): Navigation tree with section headers

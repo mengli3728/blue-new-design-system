@@ -96,7 +96,7 @@ function App() {
     /* Top bar */
     React.createElement('div', { style: appStyles.topBar },
       React.createElement('div', { style: appStyles.topBarLeft },
-        React.createElement('img', { src: '../../logo-default.png', alt: 'Blue New', style: topBarLogoStyles }),
+        React.createElement('img', { src: '../../logo-default.png', alt: 'JoinBright-Blue', style: topBarLogoStyles }),
         React.createElement('span', { style: { color: 'var(--border-color)' } }, '/'),
         React.createElement('span', { style: appStyles.breadcrumbCurrent }, sectionTitle[section]),
       ),

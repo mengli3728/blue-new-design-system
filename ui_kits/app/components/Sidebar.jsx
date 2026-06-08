@@ -96,7 +96,7 @@ function Sidebar({ activeSection, onNavigate }) {
     /* Logo */
     React.createElement('div', { style: sidebarStyles.logoArea },
       React.createElement('div', { style: sidebarStyles.logo },
-        React.createElement('img', { src: '../../logo-default.png', alt: 'Blue New', style: sidebarStyles.logoImg })
+        React.createElement('img', { src: '../../logo-default.png', alt: 'JoinBright-Blue', style: sidebarStyles.logoImg })
       )
     ),
     /* Navigation */

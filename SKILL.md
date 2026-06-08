@@ -1,10 +1,10 @@
 ---
-name: Blue New Design System
+name: JoinBright-Blue Design System
 description: An Internet-style (互联网风格) design system for enterprise back-office and energy/power control products — CSS tokens, component specs, preview cards, and a runnable React UI kit
 user-invocable: false
 ---
 
-# Blue New Design System
+# JoinBright-Blue Design System
 
 A reusable Claude Design-style design system package. This skill provides design rules, CSS tokens, preview cards, and a runnable React UI kit for generating enterprise back-office and energy/power control interfaces.
 
@@ -14,7 +14,7 @@ This SKILL.md includes: What is inside, Source context, When to use, How to use,
 
 ## What's inside
 
-The Blue New Design System package contains:
+The JoinBright-Blue Design System package contains:
 
 - DESIGN.md — 9-section design contract with product context, visual foundations, color palette with OKLch values, typography scale (12px–20px at Medium 600 and Regular 400), spacing scale (2px–224px with density rules), BorderLayout and FlowLayout patterns, 10+ component specifications (navigation, tree view, form controls, tables, pagination, buttons, modal dialogs, loading states, badges, steps wizard, carousel, breadcrumbs, search, lists, upload, calendar), motion and interaction tokens, voice and brand guidelines, and enforced anti-patterns.
 - colors_and_type.css — 90+ CSS custom properties bound directly to DESIGN.md tokens, plus reusable component base classes (`.btn`, `.form-input`, `.badge`, `.nav-item`, `.tree-node`, `.pagination`, `.spinner`, `.steps`).
@@ -30,7 +30,7 @@ The Blue New Design System package contains:
 
 ## Source Context
 
-This design system was built from a Chinese enterprise back-office UI specification file (assets_deepseek_markdown_20260604_eb6df0.md) captured during project setup. No linked GitHub repositories, local code folders, or Figma files were provided. The specification describes an Internet-style (互联网风格) interface for energy/power control products with dense data tables, tree navigation, multi-level menus, and status-driven workflows. The canonical design system title recorded during setup is "Blue New Design System."
+This design system was built from a Chinese enterprise back-office UI specification file (assets_deepseek_markdown_20260604_eb6df0.md) captured during project setup. No linked GitHub repositories, local code folders, or Figma files were provided. The specification describes an Internet-style (互联网风格) interface for energy/power control products with dense data tables, tree navigation, multi-level menus, and status-driven workflows. The canonical design system title recorded during setup is "JoinBright-Blue Design System."
 
 Source evidence files:
 - context/source-context.md — Provenance manifest and intake documentation.
@@ -44,7 +44,7 @@ Source evidence files:
 
 ## When to use
 
-Use this skill when generating enterprise back-office dashboards, energy/power control management consoles, industrial IoT interfaces, data-dense administration surfaces with tables and tree navigation, or any project requiring the Blue New visual identity (primary blue `#2C7CF5`, light grey-blue `#F0F6FA` page background, PingFang SC plus system sans-serif font stack, BorderLayout page composition, status-indicator system).
+Use this skill when generating enterprise back-office dashboards, energy/power control management consoles, industrial IoT interfaces, data-dense administration surfaces with tables and tree navigation, or any project requiring the JoinBright-Blue visual identity (primary blue `#2C7CF5`, light grey-blue `#F0F6FA` page background, PingFang SC plus system sans-serif font stack, BorderLayout page composition, status-indicator system).
 
 Do not use this skill for consumer mobile apps, editorial/magazine layouts, marketing sites, or projects requiring warm/beige/pink color palettes.
 
@@ -54,9 +54,9 @@ Do not use this skill for consumer mobile apps, editorial/magazine layouts, mark
 
 1. Read DESIGN.md (all 9 sections) as the complete design contract before writing any artifact.
 2. Import colors_and_type.css via `<link>` or `@import` into target projects. Bind `:root` tokens from DESIGN.md sections 2 (color), 3 (typography), and 4 (spacing).
-3. **Hard Rule — Brand Logo is mandatory.** Use `logo-default.png` as the standard brand mark in navigation bars, login pages, and page headers. Use `logo-white.png` on dark backgrounds/surfaces. Use `logo-blue.png` for single-tone or monochrome brand contexts. See `preview/brand-assets.html` for visual reference. When the design system is active, always render the Blue New logo in the top navigation bar of generated prototypes unless the brief specifies otherwise. This rule takes priority over any default placeholder or omitted-logo behavior.
+3. **Hard Rule — Brand Logo is mandatory.** Use `logo-default.png` as the standard brand mark in navigation bars, login pages, and page headers. Use `logo-white.png` on dark backgrounds/surfaces. Use `logo-blue.png` for single-tone or monochrome brand contexts. See `preview/brand-assets.html` for visual reference. When the design system is active, always render the JoinBright-Blue logo in the top navigation bar of generated prototypes unless the brief specifies otherwise. This rule takes priority over any default placeholder or omitted-logo behavior.
 
-4. **Hard Rule — Type Scale is mandatory.** Generated prototypes must use the Blue New type scale (20px/16px/14px/13px/12px) with their assigned weights and color tokens as specified in DESIGN.md §3. Do not substitute arbitrary font sizes, weights, or text colors for page titles, card titles, body text, secondary information, or annotations — the system font stack (`--font-family`) and mono stack (`--font-mono`) must be preserved. Except: when the user explicitly requests different typography values in their brief.
+4. **Hard Rule — Type Scale is mandatory.** Generated prototypes must use the JoinBright-Blue type scale (20px/16px/14px/13px/12px) with their assigned weights and color tokens as specified in DESIGN.md §3. Do not substitute arbitrary font sizes, weights, or text colors for page titles, card titles, body text, secondary information, or annotations — the system font stack (`--font-family`) and mono stack (`--font-mono`) must be preserved. Except: when the user explicitly requests different typography values in their brief.
 
 5. Check component specs in DESIGN.md §6 for correct states — every component must include default, hover, focus, active, and disabled visual forms.
 6. Review anti-patterns in DESIGN.md §9 before shipping. The section explicitly forbids warm tones, mixed alignment within regions, missing semantic states, and excessive gradients.
@@ -65,7 +65,7 @@ Do not use this skill for consumer mobile apps, editorial/magazine layouts, mark
 
 ### Quick-start template
 
-Use this HTML skeleton when starting a new prototype with Blue New. It imports the token CSS and renders a page shell with the brand logo and system button:
+Use this HTML skeleton when starting a new prototype with JoinBright-Blue. It imports the token CSS and renders a page shell with the brand logo and system button:
 
 ```html
 <!doctype html>
@@ -73,14 +73,14 @@ Use this HTML skeleton when starting a new prototype with Blue New. It imports t
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blue New — Page</title>
+  <title>JoinBright-Blue — Page</title>
   <link rel="stylesheet" href="colors_and_type.css">
 </head>
 <body style="background:var(--bg-page);font-family:var(--font-family);margin:0;padding:20px;">
 
   <!-- Top navigation bar with brand logo -->
   <nav class="nav-topbar">
-    <img class="nav-brand-logo" src="logo-default.png" alt="Blue New">
+    <img class="nav-brand-logo" src="logo-default.png" alt="JoinBright-Blue">
     <span style="font-size:var(--text-sm);color:var(--text-body);margin-left:var(--space-20);">Dashboard</span>
   </nav>
 

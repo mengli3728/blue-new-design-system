@@ -1,8 +1,8 @@
-# Blue New — App UI Kit
+# JoinBright-Blue — App UI Kit
 
 ## Overview
 
-The `ui_kits/app/` directory contains a runnable React application that demonstrates how Blue New design tokens and component patterns compose into a real enterprise back-office surface. Designed for energy/power control dashboard scenarios.
+The `ui_kits/app/` directory contains a runnable React application that demonstrates how JoinBright-Blue design tokens and component patterns compose into a real enterprise back-office surface. Designed for energy/power control dashboard scenarios.
 
 ## Structure
 
@@ -33,7 +33,7 @@ Each component file:
 
 ## Design Notes
 
-- Uses the Blue New color tokens: `var(--color-primary)` (#2C7CF5), `var(--bg-page)` (#F0F6FA), `var(--bg-surface)` (#FFFFFF)
+- Uses the JoinBright-Blue color tokens: `var(--color-primary)` (#2C7CF5), `var(--bg-page)` (#F0F6FA), `var(--bg-surface)` (#FFFFFF)
 - Form layout follows label-above, control-below pattern with 10px row gaps
 - Sidebar uses active state with primary background color
 - Table headers are sortable with visual indicator
@@ -41,7 +41,7 @@ Each component file:
 
 ## Source Basis
 
-The components are modeled after the Blue New design specification captured in `assets_deepseek_markdown_20260604_eb6df0.md`, which describes an Internet-style (互联网风格) enterprise back-office interface for energy/power control with:
+The components are modeled after the JoinBright-Blue design specification captured in `assets_deepseek_markdown_20260604_eb6df0.md`, which describes an Internet-style (互联网风格) enterprise back-office interface for energy/power control with:
 - BorderLayout navigation pattern
 - Tree-style sidebar navigation
 - Data-dense table views with sort/filter
