@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="blue" data-color-scheme-mode="toggle" data-color-scheme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JoinBright-Blue - dark component kit</title>
+  <style>
+:root {
+  --color-primary: #2C7CF5;
+  --color-primary-hover: #4091F9;
+  --color-primary-light: #EBF3FF;
+  --color-primary-bg: #ECF7FF;
+  --nav-gradient-from: #2C7CF5;
+  --nav-gradient-to: #57AAFE;
+  --color-primary-active: #0A64EA;
+  --color-success: #00D6A5;
+  --color-warning: #FAAD14;
+  --color-danger: #FF5959;
+  --bg-page: #F2F5F9;
+  --bg-surface: #FFFFFF;
+  --bg-overlay: rgba(0,0,0,0.5);
+  --bg-input: #FFFFFF;
+  --text-heading: #000000;
+  --text-body: #4A4A4A;
+  --text-secondary: #666666;
+  --text-hint: #BDBDBD;
+  --text-label: #999999;
+  --text-danger: #FF5959;
+  --border-color: #E5E9F0;
+  --border-color-hover: #2C7CF5;
+  --font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+  --font-mono: "SF Mono", SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  --text-xxl: 20px; --text-xl: 16px; --text-sm: 14px; --text-13: 13px; --text-xs: 12px;
+  --weight-medium: 600; --weight-regular: 400;
+  --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-10: 10px; --space-12: 12px;
+  --space-16: 16px; --space-18: 18px; --space-20: 20px; --space-24: 24px; --space-32: 32px;
+  --radius-sm: 4px; --radius-base: 12px; --radius-lg: 16px; --radius-round: 999px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-base: 0 2px 8px rgba(0,0,0,0.15);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.18);
+  --transition-fast: 0.15s ease; --transition-base: 0.2s ease;
+
+  --od-page-bg: #F2F5F9;
+  --od-surface: #FFFFFF;
+  --od-text: #000000;
+  --od-muted: #666666;
+  --od-border: #E5E9F0;
+  --od-accent: #2C7CF5;
+  --od-accent-hover: #4091F9;
+  --od-radius: 12px;
+  --od-radius-sm: 4px;
+  --od-radius-lg: 16px;
+  --od-radius-round: 999px;
+  --od-font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+  --od-font-display: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+  --od-font-mono: "SF Mono", SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+/* Theme: 国网绿 */
+[data-theme="green"] {
+  --color-primary: #00A187;
+  --color-primary-hover: #06BD9F;
+  --color-primary-light: #F4FFFF;
+  --color-primary-bg: #F0F6FA;
+  --nav-gradient-from: #00A187;
+  --nav-gradient-to: #06BD9F;
+  --color-primary-active: #00806B;
+  --border-color-hover: #00A187;
+  --od-accent: #00A187;
+  --od-accent-hover: #06BD9F;
+}
+
+/* Theme: 南瑞蓝 */
+[data-theme="nari"] {
+  --color-primary: #003C78;
+  --color-primary-hover: #22487C;
+  --color-primary-light: #CFD6E1;
+  --color-primary-bg: #F0F6FA;
+  --nav-gradient-from: #003C78;
+  --nav-gradient-to: #22487C;
+  --color-primary-active: #002A55;
+  --border-color-hover: #003C78;
+  --od-accent: #003C78;
+  --od-accent-hover: #22487C;
+}
+
+/* Dark color scheme */
+[data-color-scheme="dark"] {
+  --bg-page: #1A1D23;
+  --bg-surface: #24272E;
+  --bg-overlay: rgba(0,0,0,0.6);
+  --bg-input: #2D3038;
+  --text-heading: #E8EAED;
+  --text-body: #C4C7CC;
+  --text-secondary: #9AA0A8;
+  --text-hint: #5F656E;
+  --text-label: #7B8088;
+  --text-danger: #FF7B7B;
+  --border-color: #333740;
+  --color-primary-light: #2A3A54;
+  --color-primary-bg: #1E2A3C;
+  --color-success: #2EE0B5;
+  --color-warning: #FCC44D;
+  --color-danger: #FF7B7B;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.20);
+  --shadow-base: 0 2px 8px rgba(0,0,0,0.30);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.35);
+  --od-page-bg: #1A1D23;
+  --od-surface: #24272E;
+  --od-text: #E8EAED;
+  --od-muted: #9AA0A8;
+  --od-border: #333740;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  margin: 0; min-height: 100vh;
+  background: var(--od-page-bg);
+  color: var(--od-text);
+  font-family: var(--od-font-body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Nav */
+.nav-topbar {
+  display: flex; align-items: center;
+  height: 50px; padding: 0 20px;
+  background: linear-gradient(90deg, var(--nav-gradient-from) -1%, var(--nav-gradient-to) 100%);
+  gap: 20px;
+}
+.nav-brand-logo { height: 28px; width: auto; display: block; }
+.nav-topbar-title { font-size: 16px; font-weight: 600; color: #fff; line-height: 50px; }
+.nav-topbar .nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+
+/* Theme Switcher */
+.theme-switcher { position: relative; }
+.theme-switcher__trigger {
+  display: flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 12px; border-radius: 6px; border: none;
+  background: var(--color-primary-bg); color: #000;
+  font-size: 14px; font-weight: 600; font-family: var(--od-font-body); cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.theme-switcher__trigger:hover,
+.theme-switcher.is-open .theme-switcher__trigger { color: var(--color-primary); }
+.theme-switcher__swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.theme-switcher__swatch--blue { background: #2C7CF5; }
+.theme-switcher__swatch--green { background: #00A187; }
+.theme-switcher__swatch--nari { background: #003C78; }
+.theme-switcher__caret { width: 10px; height: 10px; transition: transform 0.2s; }
+.theme-switcher.is-open .theme-switcher__caret { transform: rotate(180deg); }
+.theme-switcher__menu {
+  display: none; position: absolute; right: 0; top: calc(100% + 6px);
+  background: var(--od-surface); border: 1px solid var(--od-border);
+  border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); padding: 4px; min-width: 160px;
+  list-style: none; z-index: 100;
+}
+.theme-switcher.is-open .theme-switcher__menu { display: block; }
+.theme-switcher__option {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; height: 32px; padding: 0 10px; border: none; border-radius: 6px;
+  background: transparent; font-size: 14px; font-weight: 400; color: var(--od-text);
+  font-family: var(--od-font-body); cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.theme-switcher__option:hover { background: var(--color-primary-bg); color: var(--color-primary); }
+.theme-switcher__option.is-active { background: var(--color-primary); color: #fff; font-weight: 600; }
+
+/* Color-scheme toggle */
+.color-scheme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0; border-radius: 6px; border: none;
+  background: var(--color-primary-bg); color: #4A4A4A;
+  cursor: pointer; transition: color 0.2s, background 0.2s;
+}
+.color-scheme-toggle:hover { color: var(--color-primary); }
+.color-scheme-toggle svg { width: 16px; height: 16px; display: block; }
+
+/* Dark overrides for nav controls */
+[data-color-scheme="dark"] .theme-switcher__trigger,
+[data-color-scheme="dark"] .color-scheme-toggle {
+  background: rgba(255,255,255,0.12); color: #fff;
+}
+[data-color-scheme="dark"] .theme-switcher__trigger:hover,
+[data-color-scheme="dark"] .color-scheme-toggle:hover { background: rgba(255,255,255,0.20); color: #fff; }
+
+/* Hide toggle when a fixed color-scheme mode is chosen */
+[data-color-scheme-mode="light-only"] .color-scheme-toggle,
+[data-color-scheme-mode="dark-only"] .color-scheme-toggle {
+  display: none !important;
+}
+
+/* Page */
+.page { width: min(1100px, calc(100vw - 48px)); margin: 0 auto; padding: 40px 0 80px; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: center; margin-bottom: 48px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--od-font-display); }
+h1 { margin-top: 8px; font-size: 48px; font-weight: 600; line-height: 1.1; }
+h2 { font-size: 28px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 600; }
+.eyebrow { color: var(--od-accent); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.lead { margin-top: 12px; color: var(--od-muted); font-size: 16px; line-height: 1.55; }
+
+/* Panel */
+.panel { border: 1px solid var(--od-border); border-radius: var(--od-radius); background: var(--od-surface); padding: 24px; }
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.metric { padding: 12px; }
+.metric strong { display: block; font-size: 28px; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; }
+.metric span { color: var(--od-muted); font-size: 13px; line-height: 1.5; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.chip { border: 1px solid var(--od-border); border-radius: 999px; padding: 6px 12px; color: var(--od-muted); font-size: 13px; }
+
+/* Sections */
+.section { margin-bottom: 36px; }
+.section-title {
+  font-size: 20px; font-weight: 600; color: var(--od-text);
+  margin: 0 0 16px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--od-border);
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title .tag { font-size: 13px; font-weight: 400; color: var(--od-muted); }
+
+/* Component cards */
+.comp-card { border: 1px solid var(--od-border); border-radius: var(--od-radius); background: var(--od-surface); padding: 20px; }
+
+/* Buttons */
+.btn-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  height: 36px; padding: 0 18px; border-radius: 6px;
+  font-size: 14px; font-weight: 400;
+  border: 1px solid transparent; cursor: pointer;
+  transition: background 0.2s ease; font-family: var(--od-font-body);
+}
+.btn-primary { background: var(--od-accent); color: #fff; }
+.btn-primary:hover { background: var(--od-accent-hover); }
+.btn-secondary { background: transparent; color: var(--od-text); border-color: var(--od-border); }
+.btn-secondary:hover { background: var(--od-surface); }
+.btn-danger { background: #FF7B7B; color: #fff; }
+.btn-ghost { background: transparent; color: var(--od-text); }
+.btn-ghost:hover { background: rgba(255,255,255,0.06); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Inputs */
+.form-control { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; }
+.form-label { font-size: 14px; color: var(--od-text); margin-bottom: 0; }
+.form-input {
+  height: 36px; padding: 0 12px; border: 1px solid var(--od-border);
+  border-radius: var(--od-radius-sm); background: var(--od-page-bg);
+  font-size: 14px; font-family: var(--od-font-body); color: var(--od-text);
+  min-width: 224px; transition: border-color 0.2s ease;
+}
+.form-input:focus { outline: none; border-color: var(--od-accent); }
+.form-error { font-size: 12px; color: #FF7B7B; margin-top: 4px; }
+
+/* Badges */
+.badge {
+  display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 500; line-height: 1.6;
+}
+.badge-success { background: rgba(46,224,181,0.12); color: #2EE0B5; }
+.badge-warning { background: rgba(252,196,77,0.12); color: #FCC44D; }
+.badge-danger  { background: rgba(255,123,123,0.12); color: #FF7B7B; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 10px 20px; background: var(--od-page-bg); font-size: 14px; font-weight: 500; color: var(--od-text); border-bottom: 1px solid var(--od-border); }
+td { padding: 10px 20px; font-size: 14px; color: var(--od-text); border-bottom: 1px solid var(--od-border); }
+tr:hover td { background: rgba(255,255,255,0.04); }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.card {
+  background: var(--od-surface); border-radius: var(--od-radius); padding: 20px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.card-secondary {
+  background: var(--od-surface); border: 1px solid var(--od-border);
+  border-radius: var(--od-radius); padding: 20px; display: flex; flex-direction: column; gap: 6px;
+}
+.card-title { font-size: 16px; font-weight: 600; color: var(--od-text); }
+.kpi-num { font-size: 28px; font-weight: 600; color: var(--od-text); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.kpi-label { font-size: 12px; color: var(--od-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Progress */
+.progress-bar { width: 100%; height: 8px; background: var(--od-border); border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 999px; background: var(--od-accent); }
+.progress-fill.success { background: #2EE0B5; }
+.progress-fill.warning { background: #FCC44D; }
+
+/* Slider */
+.slider-wrap { display: flex; flex-direction: column; gap: 4px; }
+.slider-track { width: 100%; height: 4px; background: var(--od-border); border-radius: 4px; position: relative; cursor: pointer; }
+.slider-fill { height: 100%; background: var(--od-accent); border-radius: 4px; position: absolute; left: 0; top: 0; }
+.slider-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--od-surface); border: 2px solid var(--od-accent); position: absolute; top: 50%; transform: translate(-50%, -50%); }
+
+/* Spinner */
+.spinner { width: 32px; height: 32px; border: 3px solid var(--od-border); border-top-color: var(--od-accent); border-radius: 50%; animation: spin 0.6s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Steps */
+.steps { display: flex; align-items: flex-start; gap: 0; }
+.step { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; }
+.step::after { content: ''; position: absolute; top: 16px; left: calc(50% + 16px); width: calc(100% - 32px); height: 1px; background: var(--od-border); }
+.step:last-child::after { display: none; }
+.step-indicator { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; font-weight: 500; background: var(--od-border); color: var(--od-muted); position: relative; z-index: 1; }
+.step.active .step-indicator { background: var(--od-accent); color: #fff; }
+.step.completed .step-indicator { background: #2EE0B5; color: #1A1D23; }
+.step-label { font-size: 12px; color: var(--od-muted); margin-top: 6px; }
+
+/* Pagination */
+.pagination { display: flex; gap: 8px; align-items: center; }
+.pagination button { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--od-border); background: var(--od-surface); font-size: 14px; color: var(--od-text); cursor: pointer; display: grid; place-items: center; }
+.pagination button:hover { border-color: var(--od-accent); color: var(--od-accent); }
+.pagination button.active { background: var(--od-accent); color: #fff; border-color: var(--od-accent); }
+
+/* Breadcrumb */
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--od-muted); }
+.breadcrumb a { color: var(--od-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--od-accent); }
+.breadcrumb .current { color: var(--od-text); font-weight: 600; }
+
+/* Search */
+.search-bar { display: flex; align-items: center; height: 36px; border: 1px solid var(--od-border); border-radius: var(--od-radius); background: var(--od-page-bg); padding: 0 12px; gap: 8px; max-width: 320px; transition: border-color 0.2s; }
+.search-bar:focus-within { border-color: var(--od-accent); }
+.search-bar input { border: 0; outline: none; flex: 1; font-size: 14px; font-family: var(--od-font-body); background: transparent; color: var(--od-text); }
+.search-bar input::placeholder { color: var(--od-muted); }
+
+/* Tree */
+.tree-node { display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--od-radius); font-size: 14px; cursor: pointer; transition: background 0.2s; }
+.tree-node:hover { background: rgba(255,255,255,0.04); }
+.tree-node.selected { color: var(--od-accent); }
+
+/* Modal */
+.modal-demo { background: var(--od-surface); border-radius: var(--od-radius-lg); box-shadow: 0 4px 16px rgba(0,0,0,0.4); max-width: 480px; overflow: hidden; }
+.modal-demo .modal-header { padding: 12px 24px; border-bottom: 1px solid var(--od-border); display: flex; justify-content: space-between; align-items: center; }
+.modal-demo .modal-title { font-size: 16px; font-weight: 600; }
+.modal-demo .modal-body { padding: 20px 24px; font-size: 14px; color: var(--od-muted); }
+.modal-demo .modal-footer { padding: 20px 24px; border-top: 1px solid var(--od-border); display: flex; justify-content: flex-end; gap: 10px; }
+
+/* Carousel */
+.carousel-demo { width: 100%; aspect-ratio: 16/9; border-radius: var(--od-radius); background: linear-gradient(135deg, var(--od-accent) 0%, var(--od-accent-hover) 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.carousel-demo .carousel-text { color: #fff; font-size: 16px; font-weight: 600; }
+.carousel-dots { position: absolute; bottom: 20px; display: flex; gap: 8px; }
+.carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); border: none; cursor: pointer; padding: 0; }
+.carousel-dot.active { background: #fff; }
+
+/* Grid helpers */
+.row { display: flex; gap: 24px; flex-wrap: wrap; }
+.col { flex: 1; min-width: 280px; }
+.gap-12 { display: flex; flex-direction: column; gap: 12px; }
+.gap-16 { display: flex; flex-direction: column; gap: 16px; }
+.gap-24 { display: flex; flex-direction: column; gap: 24px; }
+
+@media (max-width: 820px) {
+  .hero, .card-grid { grid-template-columns: 1fr; }
+  .page { width: min(100vw - 28px, 1100px); padding: 20px 0 60px; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 22px; }
+  .row { flex-direction: column; }
+  .col { min-width: 100%; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav-topbar">
+    <img class="nav-brand-logo" src="../logos/logo-white.png" alt="JoinBright-Blue">
+    <span class="nav-topbar-title">组件套件</span>
+    <div class="nav-right">
+      <div class="theme-switcher" data-theme-switcher>
+        <button class="theme-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="theme-switcher__swatch theme-switcher__swatch--blue" data-theme-current-swatch></span>
+          <span data-theme-current-label>博瑞蓝</span>
+          <svg class="theme-switcher__caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul class="theme-switcher__menu" role="listbox" aria-label="主题色">
+          <li role="presentation">
+            <button class="theme-switcher__option is-active" type="button" role="option" aria-selected="true" data-theme-value="blue" data-theme-label="博瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--blue"></span>博瑞蓝
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="green" data-theme-label="国网绿">
+              <span class="theme-switcher__swatch theme-switcher__swatch--green"></span>国网绿
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="nari" data-theme-label="南瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--nari"></span>南瑞蓝
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="color-scheme-toggle" type="button" title="浅色/深色切换" aria-label="切换浅色深色模式">
+        <svg class="color-scheme-toggle__icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="3"/>
+          <path d="M8 1v1.5M8 13.5V15M2.5 8H1M15 8h-1.5M3.5 3.5l1 1M11.5 11.5l1 1M3.5 12.5l1-1M11.5 4.5l1-1"/>
+        </svg>
+        <svg class="color-scheme-toggle__icon-dark" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M13.5 10.5A6 6 0 0 1 5.5 2.5 5 5 0 1 0 13.5 10.5Z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Custom Design System</p>
+        <h1>JoinBright-Blue<br>组件套件</h1>
+        <p class="lead">面向企业后台与能源电力管控产品的互联网风格设计体系 — 深色模式适配。以下为全部 18 类组件在深色表面上的暗色规格展示。</p>
+      </div>
+      <article class="panel">
+        <p class="eyebrow">参考数据</p>
+        <h3>Token 驱动表面层</h3>
+        <div class="metric-grid">
+          <div class="metric"><strong>18</strong><span>组件规格</span></div>
+          <div class="metric"><strong>3</strong><span>主题色系</span></div>
+          <div class="metric"><strong>5</strong><span>文字层级</span></div>
+          <div class="metric"><strong>11</strong><span>间距阶梯</span></div>
+        </div>
+        <div class="chip-row">
+          <span class="chip">默认</span>
+          <span class="chip">悬浮</span>
+          <span class="chip">聚焦</span>
+          <span class="chip">激活</span>
+          <span class="chip">禁用</span>
+          <span class="chip">错误</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Colors -->
+    <section class="section">
+      <h2 class="section-title">色板 <span class="tag">Dark Surface · Primary · Semantic</span></h2>
+      <div class="comp-card gap-12">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#1A1D23;border:1px solid var(--od-border);" title="Page BG #1A1D23"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#24272E;border:1px solid var(--od-border);" title="Surface #24272E"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#2C7CF5;" title="Primary #2C7CF5"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#4091F9;" title="Hover #4091F9"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#2EE0B5;" title="Success #2EE0B5"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#FCC44D;" title="Warning #FCC44D"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#FF7B7B;" title="Danger #FF7B7B"></div>
+          <div style="width:48px;height:48px;border-radius:var(--od-radius);background:#E8EAED;" title="Text #E8EAED"></div>
+        </div>
+        <div style="font-size:12px;color:var(--od-muted);font-family:var(--od-font-mono);">
+          --od-page-bg: #1A1D23 · --od-surface: #24272E · --od-border: #333740 · --od-accent: #2C7CF5 · success: #2EE0B5 · warning: #FCC44D · danger: #FF7B7B · text: #E8EAED
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+      <h2 class="section-title">字体层级 <span class="tag">5 级字阶 · 深色对比度</span></h2>
+      <div class="comp-card gap-12">
+        <div style="font-size:20px;font-weight:600;color:var(--od-text)">20px Medium 600 — 页面主标题 / 顶级导航</div>
+        <div style="font-size:16px;font-weight:600;color:var(--od-text)">16px Medium 600 — 卡片标题 / 内页小标题</div>
+        <div style="font-size:14px;font-weight:400;color:var(--od-text)">14px Regular 400 — 正文 / 表格数据 / 表单标签</div>
+        <div style="font-size:13px;font-weight:400;color:var(--od-muted)">13px Regular 400 — 辅助信息 / 状态标签</div>
+        <div style="font-size:12px;font-weight:400;color:var(--od-muted)">12px Regular 400 — 注释 / 只读文本</div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="section">
+      <h2 class="section-title">按钮 <span class="tag">Primary · Secondary · Danger · Ghost · Disabled</span></h2>
+      <div class="comp-card gap-16">
+        <div class="btn-row">
+          <button class="btn btn-primary">创建站点</button>
+          <button class="btn btn-primary" disabled>创建站点</button>
+          <button class="btn btn-secondary">取消</button>
+          <button class="btn btn-secondary" disabled>取消</button>
+          <button class="btn btn-danger">删除</button>
+          <button class="btn btn-danger" disabled>删除</button>
+          <button class="btn btn-ghost">更多</button>
+          <button class="btn btn-ghost" disabled>更多</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inputs -->
+    <section class="section">
+      <h2 class="section-title">输入控件 <span class="tag">Default · Focus · Error · Disabled</span></h2>
+      <div class="comp-card">
+        <div class="row">
+          <div class="col">
+            <div class="form-control"><label class="form-label">站点名称</label><input class="form-input" value="北京朝阳站"></div>
+            <div class="form-control"><label class="form-label">站点名称</label><input class="form-input" placeholder="聚焦态" autofocus></div>
+          </div>
+          <div class="col">
+            <div class="form-control"><label class="form-label">站点名称</label><input class="form-input" value="格式错误" style="border-color:#FF7B7B;"><span class="form-error">名称不能为空</span></div>
+            <div class="form-control"><label class="form-label">站点名称</label><input class="form-input" value="只读内容" disabled></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="section">
+      <h2 class="section-title">徽标与标签 <span class="tag">Status · Dark Mode</span></h2>
+      <div class="comp-card gap-12">
+        <div class="btn-row">
+          <span class="badge badge-success">在线</span>
+          <span class="badge badge-warning">待更新</span>
+          <span class="badge badge-danger">离线</span>
+        </div>
+        <div class="btn-row">
+          <span class="badge badge-success" style="font-size:14px;padding:4px 12px;">运行中</span>
+          <span class="badge badge-warning" style="font-size:14px;padding:4px 12px;">维护中</span>
+          <span class="badge badge-danger" style="font-size:14px;padding:4px 12px;">故障</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="section">
+      <h2 class="section-title">数据表格 <span class="tag">Sortable · Hover · Dark Rows</span></h2>
+      <div class="comp-card" style="padding:0;overflow:hidden;">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>站点名称</th><th>设备数量</th><th>状态</th><th>更新时间</th></tr></thead>
+            <tbody>
+              <tr><td>北京朝阳站</td><td style="font-variant-numeric:tabular-nums">12,345</td><td><span class="badge badge-success">在线</span></td><td>2026-07-07 09:30</td></tr>
+              <tr><td>上海浦东站</td><td style="font-variant-numeric:tabular-nums">8,920</td><td><span class="badge badge-success">在线</span></td><td>2026-07-07 09:28</td></tr>
+              <tr><td>广州天河站</td><td style="font-variant-numeric:tabular-nums">6,450</td><td><span class="badge badge-warning">待更新</span></td><td>2026-07-07 08:15</td></tr>
+              <tr><td>成都高新区站</td><td style="font-variant-numeric:tabular-nums">1,805</td><td><span class="badge badge-danger">离线</span></td><td>2026-07-06 23:11</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="section">
+      <h2 class="section-title">卡片 <span class="tag">一级 · 二级 · KPI</span></h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-title">设备概览</span>
+          <span style="font-size:14px;color:var(--od-muted);">12 个站点运行中</span>
+        </div>
+        <div class="card-secondary">
+          <span class="card-title">告警列表</span>
+          <span style="font-size:14px;color:var(--od-muted);">3 条未处理</span>
+        </div>
+        <div class="card">
+          <span class="kpi-label">活跃站点</span>
+          <span class="kpi-num">12</span>
+          <span style="font-size:12px;color:#2EE0B5;">+2 本月新增</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps + Pagination + Breadcrumb -->
+    <section class="section">
+      <h2 class="section-title">步骤条 · 分页 · 面包屑</h2>
+      <div class="gap-24">
+        <div class="comp-card">
+          <div class="steps">
+            <div class="step completed"><div class="step-indicator">&#10003;</div><span class="step-label">站点信息</span></div>
+            <div class="step active"><div class="step-indicator">2</div><span class="step-label">设备配置</span></div>
+            <div class="step"><div class="step-indicator">3</div><span class="step-label">设备分配</span></div>
+            <div class="step"><div class="step-indicator">4</div><span class="step-label">确认提交</span></div>
+          </div>
+        </div>
+        <div class="comp-card gap-12">
+          <div class="breadcrumb">
+            <a href="#">Stations</a><span>/</span><a href="#">North District</a><span>/</span><a href="#">Devices</a><span>/</span><span class="current">DEV-0047</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            <span style="font-size:13px;color:var(--od-muted);">Showing 4 rows / Total 47</span>
+            <div class="pagination">
+              <button disabled>&#8249;</button><button class="active">1</button><button>2</button><button>3</button><button disabled>...</button><button>10</button><button>&#8250;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search + Loading + Progress + Slider -->
+    <section class="section">
+      <h2 class="section-title">搜索栏 · 进度条 · 滑块 · 加载</h2>
+      <div class="gap-16">
+        <div class="comp-card">
+          <div class="search-bar">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#9AA0A8" stroke-width="1.5"/><path d="M9.5 9.5L13 13" stroke="#9AA0A8" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <input placeholder="搜索站点...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col gap-12">
+            <div>
+              <span style="font-size:12px;color:var(--od-muted);margin-bottom:6px;display:block;">运行率</span>
+              <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+              <span style="font-size:12px;color:var(--od-text);margin-top:4px;display:block;">85%</span>
+            </div>
+            <div>
+              <span style="font-size:12px;color:var(--od-muted);margin-bottom:6px;display:block;">告警率</span>
+              <div class="progress-bar"><div class="progress-fill warning" style="width:35%"></div></div>
+              <span style="font-size:12px;color:var(--od-text);margin-top:4px;display:block;">35%</span>
+            </div>
+          </div>
+          <div class="col gap-12">
+            <div class="slider-wrap">
+              <span style="font-size:12px;color:var(--od-muted);margin-bottom:4px;display:block;">阈值设置</span>
+              <div class="slider-track">
+                <div class="slider-fill" style="width:60%"></div>
+                <div class="slider-thumb" style="left:60%"></div>
+              </div>
+              <span style="font-size:12px;color:var(--od-text);margin-top:4px;">60%</span>
+            </div>
+            <div class="comp-card" style="display:flex;align-items:center;gap:16px;padding:16px 20px;">
+              <div class="spinner"></div>
+              <span style="font-size:14px;color:var(--od-muted);">正在加载站点数据...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal + Carousel -->
+    <section class="section">
+      <h2 class="section-title">模态弹窗 · 轮播</h2>
+      <div class="row" style="align-items:start;">
+        <div class="col">
+          <div class="modal-demo">
+            <div class="modal-header"><span class="modal-title">创建站点</span><button class="btn btn-ghost" style="width:24px;height:24px;padding:0;border-radius:4px;">✕</button></div>
+            <div class="modal-body">确定要创建新站点吗？创建后可配置设备与监控规则。</div>
+            <div class="modal-footer"><button class="btn btn-secondary">取消</button><button class="btn btn-primary">确认创建</button></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="carousel-demo">
+            <span class="carousel-text">North District</span>
+            <div class="carousel-dots">
+              <button class="carousel-dot active"></button>
+              <button class="carousel-dot"></button>
+              <button class="carousel-dot"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function () {
+      var KEY = 'joinbright:theme';
+      var SWATCH_CLASSES = ['theme-switcher__swatch--blue', 'theme-switcher__swatch--green', 'theme-switcher__swatch--nari'];
+
+      function applyTheme(value) {
+        document.documentElement.setAttribute('data-theme', value);
+        try { localStorage.setItem(KEY, value); } catch (_) {}
+        document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+          var trigger = root.querySelector('.theme-switcher__trigger');
+          var label = root.querySelector('[data-theme-current-label]');
+          var swatch = root.querySelector('[data-theme-current-swatch]');
+          var match = root.querySelector('.theme-switcher__option[data-theme-value="' + value + '"]');
+          if (label && match) label.textContent = match.getAttribute('data-theme-label') || match.textContent.trim();
+          if (swatch) {
+            SWATCH_CLASSES.forEach(function (c) { swatch.classList.remove(c); });
+            swatch.classList.add('theme-switcher__swatch--' + value);
+          }
+          root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+            var isActive = opt.getAttribute('data-theme-value') === value;
+            opt.classList.toggle('is-active', isActive);
+            opt.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          root.classList.remove('is-open');
+        });
+      }
+
+      var saved;
+      try { saved = localStorage.getItem(KEY); } catch (_) {}
+      if (saved) applyTheme(saved);
+
+      document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+        var trigger = root.querySelector('.theme-switcher__trigger');
+        if (trigger) {
+          trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = root.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        }
+        root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            applyTheme(opt.getAttribute('data-theme-value'));
+          });
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+          if (!root.contains(e.target)) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    // Color-scheme mode + toggle
+    (function () {
+      var SCHEME_KEY = 'joinbright:color-scheme';
+      var MODE_KEY = 'joinbright:color-scheme-mode';
+
+      function setScheme(scheme) {
+        if (scheme === 'dark') {
+          document.documentElement.setAttribute('data-color-scheme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-color-scheme');
+        }
+        try { localStorage.setItem(SCHEME_KEY, scheme); } catch (_) {}
+        document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+          var lightIcon = btn.querySelector('.color-scheme-toggle__icon-light');
+          var darkIcon = btn.querySelector('.color-scheme-toggle__icon-dark');
+          if (scheme === 'dark') {
+            if (lightIcon) lightIcon.style.display = 'none';
+            if (darkIcon) darkIcon.style.display = 'block';
+            btn.setAttribute('title', '切换浅色模式');
+            btn.setAttribute('aria-label', '切换浅色模式');
+          } else {
+            if (lightIcon) lightIcon.style.display = 'block';
+            if (darkIcon) darkIcon.style.display = 'none';
+            btn.setAttribute('title', '切换深色模式');
+            btn.setAttribute('aria-label', '切换深色模式');
+          }
+        });
+      }
+
+      function applyMode(mode) {
+        document.documentElement.setAttribute('data-color-scheme-mode', mode);
+        try { localStorage.setItem(MODE_KEY, mode); } catch (_) {}
+        if (mode === 'dark-only') {
+          setScheme('dark');
+        } else {
+          var saved;
+          try { saved = localStorage.getItem(SCHEME_KEY); } catch (_) {}
+          setScheme(saved || document.documentElement.getAttribute('data-color-scheme') || 'light');
+        }
+      }
+
+      var savedMode;
+      try { savedMode = localStorage.getItem(MODE_KEY); } catch (_) {}
+      applyMode(savedMode || document.documentElement.getAttribute('data-color-scheme-mode') || 'toggle');
+
+      document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = document.documentElement.getAttribute('data-color-scheme-mode') || 'toggle';
+          if (mode !== 'toggle') return;
+          var current = document.documentElement.getAttribute('data-color-scheme');
+          setScheme(current === 'dark' ? 'light' : 'dark');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "format": "od-design-tokens/v1",
+  "contract": "TOKEN_SCHEMA",
+  "generatedAt": "2026-07-07T00:00:00.000Z",
+  "source": {
+    "tokensCss": "tokens.css",
+    "tokenContractReport": null
+  },
+  "summary": {
+    "totalTokens": 58,
+    "declaredTokens": 58,
+    "sourceBackedTokens": 58,
+    "sourceBackedA1": 34,
+    "fallbackTokens": 0,
+    "aliasTokens": 3,
+    "layerCounts": {
+      "A1-identity": 16,
+      "A1-structure": 21,
+      "A2": 18,
+      "B-slot": 3
+    },
+    "score": 100,
+    "grade": "excellent",
+    "recommendRebuild": false
+  },
+  "tokens": [
+    {
+      "name": "--color-primary",
+      "value": "#2C7CF5",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Bundled tokens.css declares --color-primary; core brand accent color.",
+      "sources": ["tokens.css:9"],
+      "sourceName": "--color-primary"
+    },
+    {
+      "name": "--color-primary-hover",
+      "value": "#4091F9",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Derived hover variant of --color-primary.",
+      "sources": ["tokens.css:10"],
+      "sourceName": "--color-primary-hover"
+    },
+    {
+      "name": "--color-primary-light",
+      "value": "#EBF3FF",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Derived light tint of --color-primary for secondary button hover backgrounds.",
+      "sources": ["tokens.css:11"],
+      "sourceName": "--color-primary-light"
+    },
+    {
+      "name": "--color-primary-bg",
+      "value": "#ECF7FF",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Derived background tint of --color-primary for hover/selected surfaces.",
+      "sources": ["tokens.css:12"],
+      "sourceName": "--color-primary-bg"
+    },
+    {
+      "name": "--nav-gradient-from",
+      "value": "#2C7CF5",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Theme-switchable navigation gradient start; varies per [data-theme].",
+      "sources": ["tokens.css:14"],
+      "sourceName": "--nav-gradient-from"
+    },
+    {
+      "name": "--nav-gradient-to",
+      "value": "#57AAFE",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Theme-switchable navigation gradient end; varies per [data-theme].",
+      "sources": ["tokens.css:15"],
+      "sourceName": "--nav-gradient-to"
+    },
+    {
+      "name": "--color-primary-active",
+      "value": "#0A64EA",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Darker pressed/active variant of --color-primary; used by --sidebar-active-bg alias.",
+      "sources": ["tokens.css:16"],
+      "sourceName": "--color-primary-active"
+    },
+    {
+      "name": "--sidebar-active-bg",
+      "value": "var(--color-primary-active)",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Alias token referencing --color-primary-active for sidebar active state.",
+      "sources": ["tokens.css:17"],
+      "sourceName": "--sidebar-active-bg"
+    },
+    {
+      "name": "--color-success",
+      "value": "#00D6A5",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core semantic color for success states.",
+      "sources": ["tokens.css:19"],
+      "sourceName": "--color-success"
+    },
+    {
+      "name": "--color-warning",
+      "value": "#FAAD14",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core semantic color for warning states.",
+      "sources": ["tokens.css:20"],
+      "sourceName": "--color-warning"
+    },
+    {
+      "name": "--color-danger",
+      "value": "#FF5959",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core semantic color for danger/error states.",
+      "sources": ["tokens.css:21"],
+      "sourceName": "--color-danger"
+    },
+    {
+      "name": "--bg-page",
+      "value": "#F2F5F9",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core page-level background color.",
+      "sources": ["tokens.css:23"],
+      "sourceName": "--bg-page"
+    },
+    {
+      "name": "--bg-surface",
+      "value": "#FFFFFF",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core card and panel surface background.",
+      "sources": ["tokens.css:24"],
+      "sourceName": "--bg-surface"
+    },
+    {
+      "name": "--bg-overlay",
+      "value": "rgba(0, 0, 0, 0.5)",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Derived modal overlay backdrop color.",
+      "sources": ["tokens.css:25"],
+      "sourceName": "--bg-overlay"
+    },
+    {
+      "name": "--bg-input",
+      "value": "#FFFFFF",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Input field background; mirrors --bg-surface.",
+      "sources": ["tokens.css:26"],
+      "sourceName": "--bg-input"
+    },
+    {
+      "name": "--text-heading",
+      "value": "#000000",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core heading and high-emphasis text color.",
+      "sources": ["tokens.css:28"],
+      "sourceName": "--text-heading"
+    },
+    {
+      "name": "--text-body",
+      "value": "#4A4A4A",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core body text color.",
+      "sources": ["tokens.css:29"],
+      "sourceName": "--text-body"
+    },
+    {
+      "name": "--text-secondary",
+      "value": "#666666",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Secondary/de-emphasized text variant.",
+      "sources": ["tokens.css:30"],
+      "sourceName": "--text-secondary"
+    },
+    {
+      "name": "--text-hint",
+      "value": "#BDBDBD",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Hint/placeholder-level text variant.",
+      "sources": ["tokens.css:31"],
+      "sourceName": "--text-hint"
+    },
+    {
+      "name": "--text-label",
+      "value": "#999999",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Label and metadata text variant.",
+      "sources": ["tokens.css:32"],
+      "sourceName": "--text-label"
+    },
+    {
+      "name": "--text-danger",
+      "value": "#FF5959",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Semantic danger text; mirrors --color-danger for validation error messages.",
+      "sources": ["tokens.css:33"],
+      "sourceName": "--text-danger"
+    },
+    {
+      "name": "--color-danger-text",
+      "value": "#FF5959",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Alias for --text-danger; same value as --color-danger.",
+      "sources": ["tokens.css:34"],
+      "sourceName": "--color-danger-text"
+    },
+    {
+      "name": "--border-color",
+      "value": "#E5E9F0",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core default border color.",
+      "sources": ["tokens.css:36"],
+      "sourceName": "--border-color"
+    },
+    {
+      "name": "--border-color-hover",
+      "value": "#2C7CF5",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "Theme-switchable hover/focus border color; varies per [data-theme].",
+      "sources": ["tokens.css:37"],
+      "sourceName": "--border-color-hover"
+    },
+    {
+      "name": "--border-width",
+      "value": "1px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Core border width token.",
+      "sources": ["tokens.css:38"],
+      "sourceName": "--border-width"
+    },
+    {
+      "name": "--font-family",
+      "value": "-apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Helvetica Neue\", Roboto, \"Segoe UI\", Arial, sans-serif",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "Core system font stack optimized for Chinese and Latin scripts.",
+      "sources": ["tokens.css:79"],
+      "sourceName": "--font-family"
+    },
+    {
+      "name": "--font-mono",
+      "value": "\"SF Mono\", SFMono-Regular, \"JetBrains Mono\", Menlo, Consolas, monospace",
+      "type": "fontFamily",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Monospace font stack for code and tabular data.",
+      "sources": ["tokens.css:80"],
+      "sourceName": "--font-mono"
+    },
+    {
+      "name": "--text-xxl",
+      "value": "20px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: page titles and top-level headings.",
+      "sources": ["tokens.css:81"],
+      "sourceName": "--text-xxl"
+    },
+    {
+      "name": "--text-xl",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: card titles and section headings.",
+      "sources": ["tokens.css:82"],
+      "sourceName": "--text-xl"
+    },
+    {
+      "name": "--text-lg",
+      "value": "18px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: large body text.",
+      "sources": ["tokens.css:83"],
+      "sourceName": "--text-lg"
+    },
+    {
+      "name": "--text-base",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: baseline body text size.",
+      "sources": ["tokens.css:84"],
+      "sourceName": "--text-base"
+    },
+    {
+      "name": "--text-sm",
+      "value": "14px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: body text, table data, form labels.",
+      "sources": ["tokens.css:85"],
+      "sourceName": "--text-sm"
+    },
+    {
+      "name": "--text-13",
+      "value": "13px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: auxiliary info, status labels, breadcrumbs.",
+      "sources": ["tokens.css:86"],
+      "sourceName": "--text-13"
+    },
+    {
+      "name": "--text-xs",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Type scale step: annotations, read-only text, inactive labels.",
+      "sources": ["tokens.css:87"],
+      "sourceName": "--text-xs"
+    },
+    {
+      "name": "--weight-medium",
+      "value": "600",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Core medium font weight for headings and emphasis.",
+      "sources": ["tokens.css:88"],
+      "sourceName": "--weight-medium"
+    },
+    {
+      "name": "--weight-regular",
+      "value": "400",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Core regular font weight for body text.",
+      "sources": ["tokens.css:89"],
+      "sourceName": "--weight-regular"
+    },
+    {
+      "name": "--space-2",
+      "value": "2px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 2px micro-spacing.",
+      "sources": ["tokens.css:94"],
+      "sourceName": "--space-2"
+    },
+    {
+      "name": "--space-4",
+      "value": "4px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 4px icon gap.",
+      "sources": ["tokens.css:95"],
+      "sourceName": "--space-4"
+    },
+    {
+      "name": "--space-8",
+      "value": "8px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 8px compact gap.",
+      "sources": ["tokens.css:96"],
+      "sourceName": "--space-8"
+    },
+    {
+      "name": "--space-10",
+      "value": "10px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 10px button row and form gap.",
+      "sources": ["tokens.css:97"],
+      "sourceName": "--space-10"
+    },
+    {
+      "name": "--space-12",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 12px module/card grid gap; primary layout rhythm.",
+      "sources": ["tokens.css:98"],
+      "sourceName": "--space-12"
+    },
+    {
+      "name": "--space-16",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 16px comfortable spacing.",
+      "sources": ["tokens.css:99"],
+      "sourceName": "--space-16"
+    },
+    {
+      "name": "--space-18",
+      "value": "18px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 18px button horizontal padding.",
+      "sources": ["tokens.css:100"],
+      "sourceName": "--space-18"
+    },
+    {
+      "name": "--space-20",
+      "value": "20px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 20px card internal padding (mandatory).",
+      "sources": ["tokens.css:101"],
+      "sourceName": "--space-20"
+    },
+    {
+      "name": "--space-24",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 24px section spacing.",
+      "sources": ["tokens.css:102"],
+      "sourceName": "--space-24"
+    },
+    {
+      "name": "--space-32",
+      "value": "32px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 32px page-level padding.",
+      "sources": ["tokens.css:103"],
+      "sourceName": "--space-32"
+    },
+    {
+      "name": "--space-40",
+      "value": "40px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 40px large section spacing.",
+      "sources": ["tokens.css:104"],
+      "sourceName": "--space-40"
+    },
+    {
+      "name": "--space-224",
+      "value": "224px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Spacing scale: 224px sidebar/minimum input width.",
+      "sources": ["tokens.css:105"],
+      "sourceName": "--space-224"
+    },
+    {
+      "name": "--radius-sm",
+      "value": "4px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Border radius scale: small — input fields and compact controls.",
+      "sources": ["tokens.css:110"],
+      "sourceName": "--radius-sm"
+    },
+    {
+      "name": "--radius-base",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Border radius scale: base — cards, panels, search bars, tree nodes.",
+      "sources": ["tokens.css:111"],
+      "sourceName": "--radius-base"
+    },
+    {
+      "name": "--radius-lg",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Border radius scale: large — modals and dialogs.",
+      "sources": ["tokens.css:112"],
+      "sourceName": "--radius-lg"
+    },
+    {
+      "name": "--radius-round",
+      "value": "999px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "Border radius scale: pill — badges, tags, progress bars.",
+      "sources": ["tokens.css:113"],
+      "sourceName": "--radius-round"
+    },
+    {
+      "name": "--border-radius",
+      "value": "8px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Alias for 8px border radius; general-purpose fallback.",
+      "sources": ["tokens.css:114"],
+      "sourceName": "--border-radius"
+    },
+    {
+      "name": "--border-radius-lg",
+      "value": "var(--radius-lg)",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Alias referencing --radius-lg (16px) for large border radius.",
+      "sources": ["tokens.css:115"],
+      "sourceName": "--border-radius-lg"
+    },
+    {
+      "name": "--shadow-sm",
+      "value": "0 1px 2px rgba(0, 0, 0, 0.06)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Shadow scale: subtle elevation for hover states.",
+      "sources": ["tokens.css:120"],
+      "sourceName": "--shadow-sm"
+    },
+    {
+      "name": "--shadow-base",
+      "value": "0 2px 8px rgba(0, 0, 0, 0.15)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Shadow scale: standard card hover and dropdown elevation.",
+      "sources": ["tokens.css:121"],
+      "sourceName": "--shadow-base"
+    },
+    {
+      "name": "--shadow-lg",
+      "value": "0 4px 16px rgba(0, 0, 0, 0.18)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Shadow scale: modal and dialog overlay elevation.",
+      "sources": ["tokens.css:122"],
+      "sourceName": "--shadow-lg"
+    },
+    {
+      "name": "--transition-fast",
+      "value": "0.15s ease",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Motion token: micro-interactions and hover transitions.",
+      "sources": ["tokens.css:127"],
+      "sourceName": "--transition-fast"
+    },
+    {
+      "name": "--transition-base",
+      "value": "0.2s ease",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Motion token: standard component transitions.",
+      "sources": ["tokens.css:128"],
+      "sourceName": "--transition-base"
+    },
+    {
+      "name": "--transition-modal",
+      "value": "0.25s ease-out",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Motion token: modal open/close transitions.",
+      "sources": ["tokens.css:129"],
+      "sourceName": "--transition-modal"
+    },
+    {
+      "name": "--transition-tree",
+      "value": "0.2s ease",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "Motion token: tree node expand/collapse animation.",
+      "sources": ["tokens.css:130"],
+      "sourceName": "--transition-tree"
+    }
+  ]
+}

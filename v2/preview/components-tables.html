@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Tables</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Tables</h1>
+    <div class="desc">Standard data tables with sortable headers, status indicators, and hover states.</div>
+
+    <div class="section-title">Standard Data Table</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Device ID</th>
+            <th>Device Name</th>
+            <th>Station</th>
+            <th>Status</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DEV-001</td><td>Wind Turbine A-12</td><td>North District</td><td><span class="badge badge-success"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-success);display:inline-block;"></span> Active</span></td><td>1,240 kW</td></tr>
+          <tr><td>DEV-002</td><td>Solar Array B-7</td><td>East Campus</td><td><span class="badge badge-success"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-success);display:inline-block;"></span> Active</span></td><td>890 kW</td></tr>
+          <tr><td>DEV-003</td><td>Battery Bank C-3</td><td>North District</td><td><span class="badge badge-warning"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-warning);display:inline-block;"></span> Warning</span></td><td>450 kW</td></tr>
+          <tr><td>DEV-004</td><td>Grid Converter D-9</td><td>South Hub</td><td><span class="badge badge-danger"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-danger);display:inline-block;"></span> Offline</span></td><td>0 kW</td></tr>
+          <tr><td>DEV-005</td><td>Hydro Turbine E-2</td><td>West Plant</td><td><span class="badge badge-success"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-success);display:inline-block;"></span> Active</span></td><td>2,100 kW</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title">Usage Guidelines</div>
+    <div style="background:var(--bg-surface);border-radius:var(--radius-base);padding:20px;font-size:14px;color:var(--text-body);line-height:1.6;">
+      <p><strong>Layout:</strong> Wrap any table in <code>.table-wrap</code>. The wrapper ships with built-in <strong>20px padding</strong> and overflow scroll — drop it directly inside a card or panel without adding another padding layer. Table width is 100% inside the wrapper.</p>
+      <p><strong>Headers:</strong> Use <code>&lt;thead&gt;</code> with <code>&lt;th&gt;</code> — headers get page background, medium weight, and auto word-wrap prevention.</p>
+      <p><strong>Row hover:</strong> <code>table tr:hover td</code> gets <code>var(--color-primary-bg)</code> highlight. Add <code>cursor: pointer</code> on rows for clickable tables.</p>
+      <p><strong>Status cells:</strong> Use <code>.badge-*</code> inside table cells for status indicators with colored dots.</p>
+      <p><strong>Don't double-pad:</strong> Avoid wrapping <code>.table-wrap</code> in a second padded container — the 20px is part of the system contract, stacking padding breaks alignment with sibling cards.</p>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>Wrapper class</td><td><code>.table-wrap</code></td></tr>
+      <tr><td>Wrapper padding</td><td>20px (built-in · <code>var(--space-20)</code>)</td></tr>
+      <tr><td>Table width</td><td>100%</td></tr>
+      <tr><td>Cell padding</td><td>10px 20px</td></tr>
+      <tr><td>Header font</td><td>14px · 500 Medium</td></tr>
+      <tr><td>Body font</td><td>14px · 400 Regular</td></tr>
+      <tr><td>Row height (approx)</td><td>40px</td></tr>
+      <tr><td>Row hover</td><td>var(--color-primary-bg) · #ECF7FF</td></tr>
+      <tr><td>Border radius</td><td>0px on wrapper</td></tr>
+      <tr><td>Overflow</td><td>Horizontal scroll when needed</td></tr>
+    </table>
+  </div>
+</body>
+</html>

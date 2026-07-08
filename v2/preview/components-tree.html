@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Tree View</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 600px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .tree-demo { background: var(--bg-surface); border-radius: var(--radius-base); padding: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Tree View</h1>
+    <div class="desc"> expand/collapse hierarchy with selection and hover states.</div>
+
+    <div class="section-title">Standard Tree</div>
+    <div class="tree-demo">
+      <div class="tree-node" onclick="this.classList.toggle('expanded')">
+        <span class="tree-toggle expanded">▶</span>
+        <span>Stations (4)</span>
+      </div>
+      <div style="padding-left:22px;">
+        <div class="tree-node" onclick="this.classList.toggle('expanded')">
+          <span class="tree-toggle expanded">▶</span>
+          <span>North District</span>
+        </div>
+        <div style="padding-left:22px;">
+          <div class="tree-node selected"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-primary);display:inline-block;"></span> Wind Turbine A-12</div>
+          <div class="tree-node"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-success);display:inline-block;"></span> Battery Bank C-3</div>
+        </div>
+        <div class="tree-node" onclick="this.classList.toggle('expanded')">
+          <span class="tree-toggle">▶</span>
+          <span>East Campus</span>
+        </div>
+        <div class="tree-node" onclick="this.classList.toggle('expanded')">
+          <span class="tree-toggle">▶</span>
+          <span>South Hub</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">States</div>
+    <div class="tree-demo">
+      <div class="tree-node"><span style="display:inline-block;width:16px;"></span><span>Default item</span></div>
+      <div class="tree-node selected"><span style="display:inline-block;width:16px;"></span><span>Selected item</span></div>
+      <div class="tree-node" style="background:var(--color-primary-bg);"><span style="display:inline-block;width:16px;"></span><span>Hovered item</span></div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.tree-node</code></td></tr>
+      <tr><td>Font</td><td>14px · 400 Regular</td></tr>
+      <tr><td>Padding</td><td>6px 12px</td></tr>
+      <tr><td>Border radius</td><td>12px (--radius-base)</td></tr>
+      <tr><td>Hover bg</td><td>var(--color-primary-bg) · #ECF7FF</td></tr>
+      <tr><td>Selected color</td><td>var(--color-primary) · #2C7CF5</td></tr>
+      <tr><td>Toggle class</td><td><code>.tree-toggle</code> — rotates 90° on <code>.expanded</code></td></tr>
+      <tr><td>Toggle transition</td><td>0.2s ease</td></tr>
+    </table>
+  </div>
+  <script>
+    document.querySelectorAll('.tree-node[onclick]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var toggle = this.querySelector('.tree-toggle');
+        if (toggle) toggle.classList.toggle('expanded');
+      });
+    });
+    document.querySelectorAll('.tree-demo .tree-node:not([onclick])').forEach(function(el) {
+      el.addEventListener('click', function() {
+        this.closest('.tree-demo').querySelectorAll('.tree-node').forEach(function(n) { n.classList.remove('selected'); });
+        this.classList.add('selected');
+      });
+    });
+  </script>
+  </div>
+</body>
+</html>

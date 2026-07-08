@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Carousel</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 700px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Carousel</h1>
+    <div class="desc">Image/content carousel with dot indicators and auto-play support.</div>
+
+    <div class="section-title">Carousel Demo</div>
+
+    <div class="carousel" id="demo-carousel">
+      <div class="carousel-slide" style="background:var(--color-primary-bg);">
+        <div style="text-align:center;">
+          <div style="font-size:36px;color:var(--color-primary);font-weight:600;line-height:1.2;">North District</div>
+          <div style="font-size:var(--text-sm);color:var(--text-secondary);margin-top:8px;">12 devices · 99.8% uptime</div>
+        </div>
+      </div>
+      <button class="carousel-nav carousel-nav-prev" onclick="prevCarousel()" aria-label="Previous slide">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>
+      </button>
+      <button class="carousel-nav carousel-nav-next" onclick="nextCarousel()" aria-label="Next slide">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg>
+      </button>
+      <div class="carousel-dots" id="demo-dots">
+        <button class="carousel-dot active" data-index="0" onclick="switchCarousel(0)"></button>
+        <button class="carousel-dot" data-index="1" onclick="switchCarousel(1)"></button>
+        <button class="carousel-dot" data-index="2" onclick="switchCarousel(2)"></button>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.carousel</code> · <code>.carousel-slide</code> · <code>.carousel-dots</code> · <code>.carousel-dot</code></td></tr>
+      <tr><td>Slide aspect ratio</td><td>16:9</td></tr>
+      <tr><td>Border radius</td><td>12px (--radius-base)</td></tr>
+      <tr><td>Dot position</td><td>Overlaid on banner, absolute bottom 20px</td></tr>
+      <tr><td>Dot size</td><td>8px circle</td></tr>
+      <tr><td>Dot gap</td><td>8px</td></tr>
+      <tr><td>Dot active</td><td>var(--text-heading) · full opacity</td></tr>
+      <tr><td>Dot inactive</td><td>var(--text-heading) · 30% opacity</td></tr>
+      <tr><td>Auto-play</td><td>5s interval (JS implementation)</td></tr>
+      <tr><td>Navigation arrows</td><td><code>.carousel-nav</code> · left/right buttons, vertically centered</td></tr>
+      <tr><td>Arrow position</td><td>20px from left/right edge</td></tr>
+      <tr><td>Arrow size</td><td>24×24px circle, 50% black bg, 16px white arrow</td></tr>
+    </table>
+  </div>
+  <script>
+    var slides = [
+      '<div style="text-align:center;"><div style="font-size:36px;color:var(--color-primary);font-weight:600;line-height:1.2;">North District</div><div style="font-size:var(--text-sm);color:var(--text-secondary);margin-top:8px;">12 devices · 99.8% uptime</div></div>',
+      '<div style="text-align:center;"><div style="font-size:36px;color:var(--color-success);font-weight:600;line-height:1.2;">East Campus</div><div style="font-size:var(--text-sm);color:var(--text-secondary);margin-top:8px;">8 devices · 98.2% uptime</div></div>',
+      '<div style="text-align:center;"><div style="font-size:36px;color:var(--color-warning);font-weight:600;line-height:1.2;">South Hub</div><div style="font-size:var(--text-sm);color:var(--text-secondary);margin-top:8px;">6 devices · 95.1% uptime</div></div>'
+    ];
+    var curSlide = 0;
+    function switchCarousel(idx) {
+      curSlide = idx;
+      var container = document.getElementById('demo-carousel').querySelector('.carousel-slide');
+      container.innerHTML = slides[idx];
+      document.querySelectorAll('#demo-dots .carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === idx);
+      });
+    }
+    function prevCarousel() {
+      switchCarousel((curSlide - 1 + slides.length) % slides.length);
+    }
+    function nextCarousel() {
+      switchCarousel((curSlide + 1) % slides.length);
+    }
+    setInterval(function() {
+      switchCarousel((curSlide + 1) % slides.length);
+    }, 5000);
+  </script>
+</body>
+</html>

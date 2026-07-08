@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="blue" data-color-scheme-mode="toggle">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — 主题色 / Themes</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 0; background: var(--bg-page); font-family: var(--font-family); color: var(--text-body); }
+
+    .page { max-width: 1200px; margin: 0 auto; padding: 32px 40px 80px; }
+
+    h1 { font-size: 24px; font-weight: 600; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; max-width: 720px; line-height: 1.6; }
+
+    .section-title { font-size: 16px; font-weight: 600; color: var(--text-heading); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+
+    .demo-wrapper { border: 1px solid var(--border-color); border-radius: var(--radius-base); overflow: hidden; margin-bottom: 24px; background: var(--bg-surface); }
+
+    .swatch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .swatch-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
+    .swatch-card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--text-heading); }
+    .swatch-card .slug { font-family: var(--font-mono); font-size: 12px; color: var(--text-label); margin: 0 0 16px; }
+    .swatch-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }
+    .swatch-row .chip { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.06); }
+    .swatch-row .label { flex: 1; color: var(--text-secondary); }
+    .swatch-row .hex { font-family: var(--font-mono); font-size: 12px; color: var(--text-body); }
+
+    .demo-card-pad { padding: 20px; }
+    .demo-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+    .sidebar-demo { width: 220px; background: var(--bg-surface); border-right: 1px solid var(--border-color); padding: 12px; min-height: 240px; }
+    .sidebar-demo .sidebar-label { font-size: 12px; color: var(--text-label); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; padding: 0 8px; }
+    .demo-sidebar-wrap { display: flex; min-height: 240px; }
+    .demo-main { flex: 1; padding: 24px; background: var(--bg-page); display: flex; flex-direction: column; gap: 12px; }
+
+    /* Inline KaTeX-like spacing fix */
+    .nav-item.icon-only { padding: 0 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Top Nav with Theme Switcher (live demo) ====== -->
+  <nav class="nav-topbar">
+    <img class="nav-brand-logo" src="../logos/logo-white.png" alt="博瑞蓝" style="margin-right:20px;">
+    <div class="nav-item active">看板</div>
+    <div class="nav-item">站点</div>
+    <div class="nav-item">设备</div>
+    <div class="nav-item">工单</div>
+    <div class="nav-item">报表</div>
+    <div class="nav-actions">
+      <div class="theme-switcher" data-theme-switcher>
+        <button class="theme-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="theme-switcher__swatch theme-switcher__swatch--blue" data-theme-current-swatch></span>
+          <span data-theme-current-label>博瑞蓝</span>
+          <svg class="theme-switcher__caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul class="theme-switcher__menu" role="listbox" aria-label="主题色 Theme">
+          <li role="presentation">
+            <button class="theme-switcher__option is-active" type="button" role="option" aria-selected="true" data-theme-value="blue" data-theme-label="博瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--blue"></span>博瑞蓝
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="green" data-theme-label="国网绿">
+              <span class="theme-switcher__swatch theme-switcher__swatch--green"></span>国网绿
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="nari" data-theme-label="南瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--nari"></span>南瑞蓝
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="color-scheme-toggle" id="color-scheme-toggle-main" type="button" title="浅色/深色切换" aria-label="切换浅色深色模式">
+        <svg class="color-scheme-toggle__icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="3"/>
+          <path d="M8 1v1.5M8 13.5V15M2.5 8H1M15 8h-1.5M3.5 3.5l1 1M11.5 11.5l1 1M3.5 12.5l1-1M11.5 4.5l1-1"/>
+        </svg>
+        <svg class="color-scheme-toggle__icon-dark" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M13.5 10.5A6 6 0 0 1 5.5 2.5 5 5 0 1 0 13.5 10.5Z"/>
+        </svg>
+      </button>
+      <div class="nav-action-btn" title="通知" style="margin-left:12px;">
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2.5a5.5 5.5 0 0 0-5.5 5.5v3l-1 2h13l-1-2V8a5.5 5.5 0 0 0-5.5-5.5z"/>
+          <path d="M6.5 13v.5a2.5 2.5 0 0 0 5 0V13"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <h1>主题色 / Themes</h1>
+    <p class="desc">
+      博瑞蓝 设计体系内置 3 套主题色：博瑞蓝、国网绿、南瑞蓝。
+      它们共享语义色、文字色、间距、字体、阴影与动效 token，仅 primary 色族（含顶部导航渐变与 sidebar 选中底色）切换。
+      使用方式：在 <code>&lt;html data-theme="…"&gt;</code> 上锁定单一主题；或在顶部导航放置 <code>.theme-switcher</code> 下拉选择器让用户运行时切换。
+    </p>
+
+    <!-- ====== Token Matrix ====== -->
+    <div class="section-title">Token 对照</div>
+    <div class="swatch-grid">
+      <div class="swatch-card">
+        <h3>博瑞蓝</h3>
+        <p class="slug">data-theme="blue"</p>
+        <div class="swatch-row"><span class="chip" style="background:#2C7CF5;"></span><span class="label">--color-primary</span><span class="hex">#2C7CF5</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#4091F9;"></span><span class="label">--color-primary-hover</span><span class="hex">#4091F9</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#EBF3FF;"></span><span class="label">--color-primary-light</span><span class="hex">#EBF3FF</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#ECF7FF;"></span><span class="label">--color-primary-bg</span><span class="hex">#ECF7FF</span></div>
+      </div>
+      <div class="swatch-card">
+        <h3>国网绿</h3>
+        <p class="slug">data-theme="green"</p>
+        <div class="swatch-row"><span class="chip" style="background:#00A187;"></span><span class="label">--color-primary</span><span class="hex">#00A187</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#06BD9F;"></span><span class="label">--color-primary-hover</span><span class="hex">#06BD9F</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#F4FFFF;"></span><span class="label">--color-primary-light</span><span class="hex">#F4FFFF</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#F0F6FA;"></span><span class="label">--color-primary-bg</span><span class="hex">#F0F6FA</span></div>
+      </div>
+      <div class="swatch-card">
+        <h3>南瑞蓝</h3>
+        <p class="slug">data-theme="nari"</p>
+        <div class="swatch-row"><span class="chip" style="background:#003C78;"></span><span class="label">--color-primary</span><span class="hex">#003C78</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#22487C;"></span><span class="label">--color-primary-hover</span><span class="hex">#22487C</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#CFD6E1;"></span><span class="label">--color-primary-light</span><span class="hex">#CFD6E1</span></div>
+        <div class="swatch-row"><span class="chip" style="background:#F0F6FA;"></span><span class="label">--color-primary-bg</span><span class="hex">#F0F6FA</span></div>
+      </div>
+    </div>
+
+    <!-- ====== Live Component Demo (responds to active theme) ====== -->
+    <div class="section-title">组件随主题色切换 — 点击右上角切换器</div>
+
+    <div class="demo-wrapper">
+      <div class="demo-card-pad">
+        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">按钮 / Button</div>
+        <div class="demo-row">
+          <button class="btn btn-primary">主要操作</button>
+          <button class="btn btn-secondary">次要操作</button>
+          <button class="btn btn-ghost">幽灵按钮</button>
+          <button class="btn btn-danger">危险操作</button>
+          <button class="btn btn-primary" disabled>禁用</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-wrapper">
+      <div class="demo-card-pad">
+        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">徽标 / Badge & Tag（语义色不随主题变化）</div>
+        <div class="demo-row">
+          <span class="badge badge-success">● 成功</span>
+          <span class="badge badge-warning">● 警告</span>
+          <span class="badge badge-danger">● 失败</span>
+          <span class="tag">标签</span>
+          <span class="progress-bar" style="width:200px;display:inline-block;vertical-align:middle;"><span class="progress-fill" style="width:60%;display:block;"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-wrapper">
+      <div class="demo-card-pad">
+        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">分页 / Pagination</div>
+        <div class="pagination" style="justify-content:flex-start;">
+          <button>‹</button>
+          <button>1</button>
+          <button class="active">2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>›</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-wrapper">
+      <div class="demo-sidebar-wrap">
+        <aside class="sidebar-demo">
+          <div class="sidebar-label">导航</div>
+          <div class="nav-item">概览</div>
+          <div class="nav-item active">站点管理</div>
+          <div class="nav-item">设备列表</div>
+          <div class="nav-item">工单中心</div>
+          <div class="nav-item">系统设置</div>
+        </aside>
+        <div class="demo-main">
+          <div style="font-size:13px;color:var(--text-secondary);">侧边栏 / Sidebar — 白色背景，选中色随主题变化</div>
+          <div class="card-secondary" style="background:var(--bg-surface);">
+            <div class="card-title">表单聚焦 / Form focus</div>
+            <input class="form-input" placeholder="点击聚焦看边框颜色" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-wrapper">
+      <nav class="nav-topbar-light" style="position:relative;">
+        <img class="nav-brand-logo" src="../logos/logo-default.png" alt="博瑞蓝" style="margin-right:20px;">
+        <div class="nav-item">看板</div>
+        <div class="nav-item active">站点</div>
+        <div class="nav-item">设备</div>
+        <div class="nav-item">工单</div>
+      </nav>
+      <div style="padding:12px 20px;font-size:12px;color:var(--text-secondary);background:var(--bg-page);">
+        浅色顶部导航 — 选中态背景为 <code>--color-primary-bg</code>，文字为 <code>--color-primary</code>
+      </div>
+    </div>
+
+    <div class="section-title">使用方式 / How to use</div>
+
+    <div class="card-secondary" style="margin-bottom:16px;">
+      <div class="card-title">单主题 — 创建时锁定</div>
+      <pre style="margin:0;font-family:var(--font-mono);font-size:13px;color:var(--text-body);background:var(--bg-page);padding:16px;border-radius:8px;overflow:auto;">&lt;html data-theme="green"&gt;     &lt;!-- 国网绿 --&gt;
+&lt;html data-theme="nari"&gt;      &lt;!-- 南瑞蓝 --&gt;
+&lt;html data-theme="blue"&gt;      &lt;!-- 博瑞蓝（默认） --&gt;</pre>
+    </div>
+
+    <div class="card-secondary">
+      <div class="card-title">多主题 — 顶部导航换肤切换器（下拉选择）</div>
+      <pre style="margin:0;font-family:var(--font-mono);font-size:13px;color:var(--text-body);background:var(--bg-page);padding:16px;border-radius:8px;overflow:auto;">&lt;div class="theme-switcher" data-theme-switcher&gt;
+  &lt;button class="theme-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false"&gt;
+    &lt;span class="theme-switcher__swatch theme-switcher__swatch--blue" data-theme-current-swatch&gt;&lt;/span&gt;
+    &lt;span data-theme-current-label&gt;博瑞蓝&lt;/span&gt;
+    &lt;svg class="theme-switcher__caret" viewBox="0 0 10 10" fill="none"&gt;
+      &lt;path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;ul class="theme-switcher__menu" role="listbox"&gt;
+    &lt;li&gt;&lt;button class="theme-switcher__option is-active"
+        data-theme-value="blue" data-theme-label="博瑞蓝"&gt;
+      &lt;span class="theme-switcher__swatch theme-switcher__swatch--blue"&gt;&lt;/span&gt;博瑞蓝
+    &lt;/button&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button class="theme-switcher__option"
+        data-theme-value="green" data-theme-label="国网绿"&gt;
+      &lt;span class="theme-switcher__swatch theme-switcher__swatch--green"&gt;&lt;/span&gt;国网绿
+    &lt;/button&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button class="theme-switcher__option"
+        data-theme-value="nari" data-theme-label="南瑞蓝"&gt;
+      &lt;span class="theme-switcher__swatch theme-switcher__swatch--nari"&gt;&lt;/span&gt;南瑞蓝
+    &lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'joinbright:theme';
+      var SWATCH_CLASSES = ['theme-switcher__swatch--blue', 'theme-switcher__swatch--green', 'theme-switcher__swatch--nari'];
+
+      function applyTheme(value) {
+        document.documentElement.setAttribute('data-theme', value);
+        try { localStorage.setItem(KEY, value); } catch (_) {}
+        document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+          var trigger = root.querySelector('.theme-switcher__trigger');
+          var label = root.querySelector('[data-theme-current-label]');
+          var swatch = root.querySelector('[data-theme-current-swatch]');
+          var match = root.querySelector('.theme-switcher__option[data-theme-value="' + value + '"]');
+          if (label && match) label.textContent = match.getAttribute('data-theme-label') || match.textContent.trim();
+          if (swatch) {
+            SWATCH_CLASSES.forEach(function (c) { swatch.classList.remove(c); });
+            swatch.classList.add('theme-switcher__swatch--' + value);
+          }
+          root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+            var isActive = opt.getAttribute('data-theme-value') === value;
+            opt.classList.toggle('is-active', isActive);
+            opt.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          root.classList.remove('is-open');
+        });
+      }
+
+      var saved;
+      try { saved = localStorage.getItem(KEY); } catch (_) {}
+      applyTheme(saved || document.documentElement.getAttribute('data-theme') || 'blue');
+
+      document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+        var trigger = root.querySelector('.theme-switcher__trigger');
+        if (trigger) {
+          trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = root.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        }
+        root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            applyTheme(opt.getAttribute('data-theme-value'));
+          });
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+          if (!root.contains(e.target)) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+
+    // Color-scheme toggle — respects stored mode choice from system pages.
+    (function () {
+      var SCHEME_KEY = 'joinbright:color-scheme';
+      var MODE_KEY = 'joinbright:color-scheme-mode';
+
+      function setScheme(scheme) {
+        if (scheme === 'dark') {
+          document.documentElement.setAttribute('data-color-scheme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-color-scheme');
+        }
+        try { localStorage.setItem(SCHEME_KEY, scheme); } catch (_) {}
+        document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+          var lightIcon = btn.querySelector('.color-scheme-toggle__icon-light');
+          var darkIcon = btn.querySelector('.color-scheme-toggle__icon-dark');
+          if (scheme === 'dark') {
+            if (lightIcon) lightIcon.style.display = 'none';
+            if (darkIcon) darkIcon.style.display = 'block';
+            btn.setAttribute('title', '切换浅色模式');
+            btn.setAttribute('aria-label', '切换浅色模式');
+          } else {
+            if (lightIcon) lightIcon.style.display = 'block';
+            if (darkIcon) darkIcon.style.display = 'none';
+            btn.setAttribute('title', '切换深色模式');
+            btn.setAttribute('aria-label', '切换深色模式');
+          }
+        });
+      }
+
+      var savedMode;
+      try { savedMode = localStorage.getItem(MODE_KEY); } catch (_) {}
+      if (savedMode) {
+        document.documentElement.setAttribute('data-color-scheme-mode', savedMode);
+      }
+
+      if (savedMode === 'dark-only') {
+        setScheme('dark');
+      } else {
+        var saved;
+        try { saved = localStorage.getItem(SCHEME_KEY); } catch (_) {}
+        setScheme(saved || 'light');
+      }
+
+      document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = document.documentElement.getAttribute('data-color-scheme-mode') || 'toggle';
+          if (mode !== 'toggle') return;
+          var current = document.documentElement.getAttribute('data-color-scheme');
+          setScheme(current === 'dark' ? 'light' : 'dark');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

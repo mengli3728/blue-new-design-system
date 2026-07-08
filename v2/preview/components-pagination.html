@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Pagination</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .demo-wrapper { border: 1px solid var(--border-color); border-radius: var(--radius-base); overflow: hidden; margin-bottom: 24px; }
+    .demo-table-area { padding: 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Pagination</h1>
+    <div class="desc">Page navigation controls for data tables and content lists.</div>
+
+    <div class="section-title">Default Pagination</div>
+    <div class="demo-wrapper">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>DEV-001</td><td>Wind Turbine A-12</td><td><span class="badge badge-success">● Active</span></td></tr>
+            <tr><td>DEV-002</td><td>Solar Array B-7</td><td><span class="badge badge-success">● Active</span></td></tr>
+            <tr><td>DEV-003</td><td>Battery Bank C-3</td><td><span class="badge badge-warning">● Warning</span></td></tr>
+            <tr><td>DEV-004</td><td>Grid Converter D-9</td><td><span class="badge badge-danger">● Offline</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <span>Showing 5 rows · Total 47</span>
+        <button disabled>‹</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>…</button>
+        <button>10</button>
+        <button>›</button>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.pagination</code></td></tr>
+      <tr><td>Layout</td><td>Flex row, right-aligned</td></tr>
+      <tr><td>Button size</td><td>32px × 32px</td></tr>
+      <tr><td>Button gap</td><td>8px</td></tr>
+      <tr><td>Font</td><td>14px · 400 Regular</td></tr>
+      <tr><td>Button radius</td><td>8px</td></tr>
+      <tr><td>Active state</td><td>Primary fill (#2C7CF5) + white text</td></tr>
+      <tr><td>Hover state</td><td>Primary border + primary text</td></tr>
+      <tr><td>Disabled state</td><td>Reduced opacity</td></tr>
+    </table>
+  </div>
+  <script>
+    document.querySelector('.pagination').addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.disabled || btn.textContent.trim() === '…') return;
+      if (btn.textContent.trim() === '‹') {
+        var active = this.querySelector('.active');
+        var prev = active && active.previousElementSibling;
+        if (prev && prev.tagName === 'BUTTON' && !prev.disabled) {
+          active.classList.remove('active');
+          prev.classList.add('active');
+          this.querySelector('button:first-child').disabled = !prev.previousElementSibling || prev.previousElementSibling.tagName !== 'BUTTON';
+          this.querySelector('button:last-child').disabled = false;
+        }
+        return;
+      }
+      if (btn.textContent.trim() === '›') {
+        var active = this.querySelector('.active');
+        var next = active && active.nextElementSibling;
+        if (next && next.tagName === 'BUTTON' && !next.disabled) {
+          active.classList.remove('active');
+          next.classList.add('active');
+          this.querySelector('button:last-child').disabled = !next.nextElementSibling || next.nextElementSibling.tagName !== 'BUTTON';
+          this.querySelector('button:first-child').disabled = false;
+        }
+        return;
+      }
+      this.querySelectorAll('button').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      this.querySelector('button:first-child').disabled = btn === this.querySelector('button:nth-child(2)');
+      this.querySelector('button:last-child').disabled = !btn.nextElementSibling || btn.nextElementSibling.tagName !== 'BUTTON' || btn.nextElementSibling.textContent.trim() === '›';
+    });
+    // Sync prev/next disabled after direct clicks land
+  </script>
+</body>
+</html>

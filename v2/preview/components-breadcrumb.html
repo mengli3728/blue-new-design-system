@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Breadcrumb</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 700px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .demo-group { margin-bottom: 24px; }
+    .demo-label { font-size: 13px; color: var(--text-label); font-family: var(--font-mono); margin-bottom: 8px; }
+    .demo-area { background: var(--bg-page); border-radius: var(--radius-base); padding: 24px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Breadcrumb</h1>
+    <div class="desc">Path hierarchy navigation with interactive link states.</div>
+
+    <div class="section-title">Default Breadcrumb</div>
+    <div class="demo-group">
+      <div class="demo-label">Two-level</div>
+      <div class="demo-area">
+        <div class="breadcrumb">
+          <a onclick="event.preventDefault()">Stations</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">North District</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-group">
+      <div class="demo-label">Three-level with navigation</div>
+      <div class="demo-area">
+        <div class="breadcrumb">
+          <a onclick="event.preventDefault()">Dashboard</a>
+          <span class="breadcrumb-sep">/</span>
+          <a onclick="event.preventDefault()">Stations</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">North District</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-group">
+      <div class="demo-label">Deep path</div>
+      <div class="demo-area">
+        <div class="breadcrumb">
+          <a onclick="event.preventDefault()">博瑞蓝</a>
+          <span class="breadcrumb-sep">/</span>
+          <a onclick="event.preventDefault()">Stations</a>
+          <span class="breadcrumb-sep">/</span>
+          <a onclick="event.preventDefault()">North District</a>
+          <span class="breadcrumb-sep">/</span>
+          <a onclick="event.preventDefault()">Devices</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">DEV-0047</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.breadcrumb</code></td></tr>
+      <tr><td>Font</td><td>13px · 300 Regular</td></tr>
+      <tr><td>Text color</td><td>var(--text-secondary) · Current: var(--text-heading), 300</td></tr>
+      <tr><td>Separator</td><td><code>/</code> · var(--border-color)</td></tr>
+      <tr><td>Link hover</td><td>var(--color-primary) · #2C7CF5</td></tr>
+      <tr><td>Spacing</td><td>8px gap between items</td></tr>
+      <tr><td>Alignment</td><td>Left-aligned, inline flex</td></tr>
+    </table>
+  </div>
+</body>
+</html>

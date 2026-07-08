@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "od-design-system-project/v1",
+  "id": "joinbright-blue",
+  "name": "JoinBright-Blue",
+  "category": "Custom",
+  "description": "互联网风格企业后台与能源电力管控产品设计体系 — 简洁、明亮、中性、实用。支持博瑞蓝/国网绿/南瑞蓝三套主题。",
+  "source": {
+    "type": "local",
+    "path": "/Users/mac/Library/Application Support/Open Design/namespaces/release-stable-intel/data/projects/ds-blue-new-design-system"
+  },
+  "files": {
+    "design": "DESIGN.md",
+    "tokens": "tokens.css",
+    "designTokens": "design-tokens.json",
+    "components": "components.html"
+  },
+  "usage": "USAGE.md",
+  "componentsManifest": "components.manifest.json",
+  "importMode": "normalized",
+  "craft": {
+    "applies": ["color", "typography", "state-coverage"],
+    "suggested": ["accessibility-baseline", "animation-discipline"],
+    "exemptions": []
+  },
+  "preview": {
+    "dir": "preview",
+    "pages": [
+      { "path": "preview/themes.html",       "role": "themes",     "title": "三主题对照" },
+      { "path": "preview/colors-primary.html",    "role": "colors",      "title": "主色色阶" },
+      { "path": "preview/colors-theme-light.html", "role": "colors",  "title": "浅色主题" },
+      { "path": "preview/colors-theme-dark.html",  "role": "colors",  "title": "深色主题" },
+      { "path": "preview/typography-specimens.html","role": "typography", "title": "字体层级" },
+      { "path": "preview/spacing-tokens.html",     "role": "spacing",    "title": "间距 Token" },
+      { "path": "preview/spacing-radius.html",     "role": "spacing",    "title": "圆角规格" },
+      { "path": "preview/spacing-shadows.html",    "role": "spacing",    "title": "阴影层级" },
+      { "path": "preview/components-navigation.html","role": "navigation","title": "导航系统" },
+      { "path": "preview/components-buttons.html", "role": "buttons",    "title": "按钮" },
+      { "path": "preview/components-inputs.html",  "role": "inputs",     "title": "输入控件" },
+      { "path": "preview/components-tables.html",  "role": "tables",     "title": "数据表格" },
+      { "path": "preview/components-pagination.html","role":"pagination","title": "分页" },
+      { "path": "preview/components-cards.html",   "role": "cards",      "title": "卡片" },
+      { "path": "preview/components-modal.html",   "role": "modal",      "title": "模态弹窗" },
+      { "path": "preview/components-tree.html",    "role": "tree",       "title": "树形控件" },
+      { "path": "preview/components-badges.html",  "role": "badges",     "title": "徽标与标签" },
+      { "path": "preview/components-steps.html",   "role": "steps",      "title": "步骤条" },
+      { "path": "preview/components-loading.html", "role": "loading",    "title": "加载与空状态" },
+      { "path": "preview/components-breadcrumb.html","role":"breadcrumb","title": "面包屑" },
+      { "path": "preview/components-search.html",  "role": "search",     "title": "搜索栏" },
+      { "path": "preview/components-lists.html",   "role": "lists",      "title": "操作列表" },
+      { "path": "preview/components-upload.html",  "role": "upload",     "title": "上传区域" },
+      { "path": "preview/components-carousel.html","role": "carousel",   "title": "轮播" },
+      { "path": "preview/components-slider.html",  "role": "slider",     "title": "进度与滑块" },
+      { "path": "preview/brand-assets.html",       "role": "brand",      "title": "品牌标识" }
+    ]
+  },
+  "sourceFiles": {
+    "evidence": "context/source-context.md",
+    "tokens": "assets_deepseek_markdown_20260604_eb6df0.md"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "JoinBright-Blue",
+  "tagline": "",
+  "description": "",
+  "sourceUrl": "",
+  "logo": {
+    "primary": "logos/logo-default.png",
+    "alternates": [
+      "logos/logo-white.png"
+    ],
+    "notes": ""
+  },
+  "colors": [],
+  "typography": {
+    "display": {
+      "family": "system-ui",
+      "fallbacks": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "sans-serif"
+      ],
+      "weights": [
+        400,
+        700
+      ]
+    },
+    "body": {
+      "family": "system-ui",
+      "fallbacks": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "sans-serif"
+      ],
+      "weights": [
+        400,
+        700
+      ]
+    }
+  },
+  "voice": {
+    "adjectives": [],
+    "tone": "",
+    "messagingPillars": [],
+    "vocabulary": {
+      "use": [],
+      "avoid": []
+    }
+  },
+  "imagery": {
+    "style": "",
+    "subjects": [],
+    "treatment": "",
+    "avoid": [],
+    "samples": []
+  },
+  "layout": {
+    "radius": "",
+    "borderWeight": "",
+    "spacing": "",
+    "postureRules": []
+  }
+}

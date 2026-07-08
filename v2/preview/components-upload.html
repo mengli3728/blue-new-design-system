@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Upload</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 600px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .spec-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .spec-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+    .demo-group { margin-bottom: 24px; }
+    .demo-label { font-size: 13px; color: var(--text-label); font-family: var(--font-mono); margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Upload</h1>
+    <div class="desc">File upload zones for single and batch upload scenarios.</div>
+
+    <div class="section-title">Upload Zone</div>
+    <div class="demo-group">
+      <div class="demo-label">Default (dashed border, hover state)</div>
+      <div class="upload-zone" onclick="alert('File dialog would open')">
+        <div class="upload-icon">+</div>
+        <div class="upload-text">Click or drag files to upload</div>
+        <div class="upload-hint">Supports CSV, PDF, PNG — max 10MB</div>
+      </div>
+    </div>
+
+    <div class="section-title">Upload States</div>
+    <div class="demo-group">
+      <div class="demo-label">Uploaded file</div>
+      <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-base);padding:16px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:20px;color:var(--color-success);">✓</span>
+        <div style="flex:1;">
+          <div style="font-size:var(--text-sm);color:var(--text-body);font-weight:500;">station-data-Q2-2026.csv</div>
+          <div style="font-size:var(--text-xs);color:var(--text-label);">2.4 MB · Uploaded 2026-06-04 14:32</div>
+        </div>
+        <button style="border:none;background:none;cursor:pointer;font-size:16px;color:var(--text-label);" onclick="alert('Remove file')">×</button>
+      </div>
+    </div>
+
+    <div class="section-title">Specifications</div>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th></tr>
+      <tr><td>CSS class</td><td><code>.upload-zone</code></td></tr>
+      <tr><td>Border</td><td>2px dashed var(--border-color)</td></tr>
+      <tr><td>Hover border</td><td>var(--color-primary) · bg var(--color-primary-bg)</td></tr>
+      <tr><td>Padding</td><td>32px 24px</td></tr>
+      <tr><td>Border radius</td><td>12px (--radius-base)</td></tr>
+      <tr><td>Icon font</td><td>32px, var(--text-label)</td></tr>
+      <tr><td>Transition</td><td>0.2s ease</td></tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1060 @@
+{
+  "schemaVersion": 1,
+  "brandId": "joinbright-blue",
+  "source": {
+    "componentsHtml": "components.html",
+    "tokensCss": "tokens.css"
+  },
+  "fixture": {
+    "title": "JoinBright-Blue — Component Showcase",
+    "description": "互联网风格企业后台与能源电力管控产品设计体系，支持博瑞蓝/国网绿/南瑞蓝三套主题。全部 18 类组件规格集中展示。",
+    "styleBlockCount": 1,
+    "selectorCount": 120,
+    "classCount": 82,
+    "elementCount": 28
+  },
+  "tokens": {
+    "declared": [
+      "--bg-input",
+      "--bg-overlay",
+      "--bg-page",
+      "--bg-surface",
+      "--border-color",
+      "--border-color-hover",
+      "--border-radius",
+      "--border-radius-lg",
+      "--border-width",
+      "--color-danger",
+      "--color-danger-text",
+      "--color-primary",
+      "--color-primary-active",
+      "--color-primary-bg",
+      "--color-primary-hover",
+      "--color-primary-light",
+      "--color-success",
+      "--color-warning",
+      "--font-family",
+      "--font-mono",
+      "--nav-gradient-from",
+      "--nav-gradient-to",
+      "--radius-base",
+      "--radius-lg",
+      "--radius-round",
+      "--radius-sm",
+      "--shadow-base",
+      "--shadow-lg",
+      "--shadow-sm",
+      "--sidebar-active-bg",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-18",
+      "--space-2",
+      "--space-20",
+      "--space-224",
+      "--space-24",
+      "--space-32",
+      "--space-4",
+      "--space-8",
+      "--text-13",
+      "--text-base",
+      "--text-heading",
+      "--text-hint",
+      "--text-label",
+      "--text-lg",
+      "--text-secondary",
+      "--text-sm",
+      "--text-xl",
+      "--text-xs",
+      "--text-xxl",
+      "--text-body",
+      "--text-danger",
+      "--transition-base",
+      "--transition-fast",
+      "--transition-modal",
+      "--transition-tree",
+      "--weight-medium",
+      "--weight-regular"
+    ],
+    "referenced": [
+      "--bg-input",
+      "--bg-page",
+      "--bg-surface",
+      "--border-color",
+      "--color-danger",
+      "--color-primary",
+      "--color-primary-bg",
+      "--color-primary-hover",
+      "--color-primary-light",
+      "--color-success",
+      "--color-warning",
+      "--font-family",
+      "--font-mono",
+      "--nav-gradient-from",
+      "--nav-gradient-to",
+      "--radius-base",
+      "--radius-lg",
+      "--radius-round",
+      "--radius-sm",
+      "--shadow-base",
+      "--shadow-lg",
+      "--space-10",
+      "--space-12",
+      "--space-18",
+      "--space-20",
+      "--space-4",
+      "--text-13",
+      "--text-body",
+      "--text-danger",
+      "--text-heading",
+      "--text-label",
+      "--text-secondary",
+      "--text-sm",
+      "--text-xl",
+      "--text-xs",
+      "--transition-base",
+      "--weight-medium",
+      "--weight-regular"
+    ],
+    "unusedDeclared": [
+      "--bg-overlay",
+      "--border-color-hover",
+      "--border-radius",
+      "--border-radius-lg",
+      "--border-width",
+      "--color-danger-text",
+      "--color-primary-active",
+      "--shadow-sm",
+      "--sidebar-active-bg",
+      "--space-16",
+      "--space-2",
+      "--space-224",
+      "--space-24",
+      "--space-32",
+      "--space-8",
+      "--text-base",
+      "--text-hint",
+      "--text-lg",
+      "--text-xxl",
+      "--transition-fast",
+      "--transition-modal",
+      "--transition-tree"
+    ],
+    "undeclaredReferenced": []
+  },
+  "selectors": [
+    "*",
+    "*::after",
+    "*::before",
+    ".action-list",
+    ".action-list li",
+    ".action-list li.active",
+    ".action-list li:hover",
+    ".badge",
+    ".badge-danger",
+    ".badge-success",
+    ".badge-warning",
+    ".breadcrumb",
+    ".breadcrumb .current",
+    ".breadcrumb a",
+    ".breadcrumb a:hover",
+    ".btn",
+    ".btn-danger",
+    ".btn-ghost",
+    ".btn-ghost:hover",
+    ".btn-primary",
+    ".btn-primary:hover",
+    ".btn-row",
+    ".btn-secondary",
+    ".btn-secondary:hover",
+    ".btn:disabled",
+    "body",
+    ".card",
+    ".card-grid",
+    ".card-secondary",
+    ".card-title",
+    ".carousel-demo",
+    ".carousel-demo .carousel-dot",
+    ".carousel-demo .carousel-dot.active",
+    ".carousel-demo .carousel-dots",
+    ".carousel-demo .carousel-text",
+    ".form-control",
+    ".form-error",
+    ".form-input",
+    ".form-input.has-error",
+    ".form-input:focus",
+    ".form-label",
+    ".kpi-label",
+    ".kpi-num",
+    ".modal-demo",
+    ".modal-demo .modal-body",
+    ".modal-demo .modal-footer",
+    ".modal-demo .modal-header",
+    ".modal-demo .modal-title",
+    ".nav-brand-logo",
+    ".nav-spacer",
+    ".nav-topbar",
+    ".nav-topbar-light",
+    ".nav-topbar-light .nav-item",
+    ".nav-topbar-light .nav-item.active",
+    ".nav-topbar-light .nav-item:hover",
+    ".nav-topbar-title",
+    ".page",
+    ".pagination",
+    ".pagination button",
+    ".pagination button.active",
+    ".pagination button:hover",
+    ".progress-bar",
+    ".progress-fill",
+    ".progress-fill.success",
+    ".progress-fill.warning",
+    ".search-bar",
+    ".search-bar input",
+    ".search-bar:focus-within",
+    ".section",
+    ".section-title",
+    ".section-title .tag",
+    ".spinner",
+    ".stat",
+    ".stat-label",
+    ".stat-num",
+    ".stats",
+    ".step",
+    ".step.active .step-indicator",
+    ".step.completed .step-indicator",
+    ".step-indicator",
+    ".step-label",
+    ".step::after",
+    ".step:last-child::after",
+    ".steps",
+    ".swatch-chip",
+    ".swatch-item",
+    ".swatch-label",
+    ".swatches",
+    ".table-wrap",
+    ".tag-row",
+    "table",
+    "td",
+    "th",
+    "tr:hover td",
+    ".tree-node",
+    ".tree-node.selected",
+    ".tree-node:hover",
+    ".tree-toggle",
+    ".tree-toggle.expanded",
+    ".ts",
+    ".ts-caret",
+    ".ts-menu",
+    ".ts-opt",
+    ".ts-opt-dot",
+    ".ts-opt-dot.blue",
+    ".ts-opt-dot.green",
+    ".ts-opt-dot.nari",
+    ".ts-opt.is-active",
+    ".ts-opt:hover",
+    ".ts-swatch",
+    ".ts-trigger",
+    ".ts-trigger:hover",
+    ".ts-wrap",
+    ".ts.is-open .ts-caret",
+    ".ts.is-open .ts-menu",
+    ".upload-zone",
+    ".upload-zone:hover",
+    "@keyframes spin",
+    "@media (max-width: 480px)",
+    "@media (max-width: 768px)"
+  ],
+  "classes": [
+    "action-list",
+    "active",
+    "badge",
+    "badge-danger",
+    "badge-success",
+    "badge-warning",
+    "blue",
+    "breadcrumb",
+    "btn",
+    "btn-danger",
+    "btn-ghost",
+    "btn-primary",
+    "btn-row",
+    "btn-secondary",
+    "card",
+    "card-grid",
+    "card-secondary",
+    "card-title",
+    "carousel-demo",
+    "carousel-dot",
+    "carousel-dots",
+    "carousel-text",
+    "completed",
+    "current",
+    "expanded",
+    "form-control",
+    "form-error",
+    "form-input",
+    "form-label",
+    "green",
+    "has-error",
+    "is-active",
+    "is-open",
+    "kpi-label",
+    "kpi-num",
+    "modal-body",
+    "modal-demo",
+    "modal-footer",
+    "modal-header",
+    "modal-title",
+    "nari",
+    "nav-brand-logo",
+    "nav-item",
+    "nav-spacer",
+    "nav-topbar",
+    "nav-topbar-light",
+    "nav-topbar-title",
+    "page",
+    "pagination",
+    "progress-bar",
+    "progress-fill",
+    "search-bar",
+    "section",
+    "section-title",
+    "selected",
+    "spinner",
+    "stat",
+    "stat-label",
+    "stat-num",
+    "stats",
+    "step",
+    "step-indicator",
+    "step-label",
+    "steps",
+    "success",
+    "swatch-chip",
+    "swatch-item",
+    "swatch-label",
+    "swatches",
+    "table-wrap",
+    "tag",
+    "tag-row",
+    "tree-node",
+    "tree-toggle",
+    "ts",
+    "ts-caret",
+    "ts-menu",
+    "ts-opt",
+    "ts-opt-dot",
+    "ts-swatch",
+    "ts-trigger",
+    "ts-wrap",
+    "upload-zone",
+    "warning"
+  ],
+  "elements": [
+    "a",
+    "body",
+    "button",
+    "circle",
+    "div",
+    "h2",
+    "head",
+    "html",
+    "img",
+    "input",
+    "label",
+    "li",
+    "main",
+    "meta",
+    "nav",
+    "path",
+    "section",
+    "span",
+    "style",
+    "svg",
+    "table",
+    "tbody",
+    "td",
+    "th",
+    "thead",
+    "title",
+    "tr",
+    "ul"
+  ],
+  "groups": [
+    {
+      "id": "colors",
+      "label": "色板",
+      "present": true,
+      "selectors": [
+        ".swatches",
+        ".swatch-item",
+        ".swatch-chip",
+        ".swatch-label"
+      ],
+      "classes": [
+        "swatch-chip",
+        "swatch-item",
+        "swatch-label",
+        "swatches"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--border-color",
+        "--font-mono",
+        "--radius-base",
+        "--space-12",
+        "--text-label",
+        "--text-xs"
+      ]
+    },
+    {
+      "id": "typography",
+      "label": "字体层级",
+      "present": true,
+      "selectors": [],
+      "classes": [
+        "card-secondary"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--text-body",
+        "--text-danger",
+        "--text-heading",
+        "--text-label",
+        "--text-secondary"
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "导航系统",
+      "present": true,
+      "selectors": [
+        ".nav-topbar",
+        ".nav-brand-logo",
+        ".nav-topbar-title",
+        ".nav-spacer",
+        ".nav-topbar-light",
+        ".nav-topbar-light .nav-item",
+        ".nav-topbar-light .nav-item.active",
+        ".nav-topbar-light .nav-item:hover"
+      ],
+      "classes": [
+        "nav-brand-logo",
+        "nav-item",
+        "nav-spacer",
+        "nav-topbar",
+        "nav-topbar-light",
+        "nav-topbar-title"
+      ],
+      "elements": [
+        "img",
+        "nav"
+      ],
+      "tokenReferences": [
+        "--bg-surface",
+        "--border-color",
+        "--color-primary",
+        "--color-primary-bg",
+        "--nav-gradient-from",
+        "--nav-gradient-to",
+        "--space-20",
+        "--text-heading",
+        "--text-xl",
+        "--transition-base",
+        "--weight-medium"
+      ]
+    },
+    {
+      "id": "buttons",
+      "label": "按钮",
+      "present": true,
+      "selectors": [
+        ".btn",
+        ".btn-danger",
+        ".btn-ghost",
+        ".btn-ghost:hover",
+        ".btn-primary",
+        ".btn-primary:hover",
+        ".btn-row",
+        ".btn-secondary",
+        ".btn-secondary:hover",
+        ".btn:disabled"
+      ],
+      "classes": [
+        "btn",
+        "btn-danger",
+        "btn-ghost",
+        "btn-primary",
+        "btn-row",
+        "btn-secondary"
+      ],
+      "elements": [
+        "button"
+      ],
+      "tokenReferences": [
+        "--color-danger",
+        "--color-primary",
+        "--color-primary-bg",
+        "--color-primary-hover",
+        "--color-primary-light",
+        "--space-18",
+        "--space-4",
+        "--space-10",
+        "--text-body",
+        "--text-sm",
+        "--transition-base",
+        "--weight-regular"
+      ]
+    },
+    {
+      "id": "inputs",
+      "label": "输入控件",
+      "present": true,
+      "selectors": [
+        ".form-control",
+        ".form-error",
+        ".form-input",
+        ".form-input.has-error",
+        ".form-input:focus",
+        ".form-label"
+      ],
+      "classes": [
+        "form-control",
+        "form-error",
+        "form-input",
+        "form-label",
+        "has-error"
+      ],
+      "elements": [
+        "input",
+        "label"
+      ],
+      "tokenReferences": [
+        "--bg-input",
+        "--border-color",
+        "--color-danger",
+        "--color-primary",
+        "--font-family",
+        "--radius-sm",
+        "--space-10",
+        "--space-12",
+        "--text-body",
+        "--text-danger",
+        "--text-sm",
+        "--text-xs",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "badges",
+      "label": "徽标与标签",
+      "present": true,
+      "selectors": [
+        ".badge",
+        ".badge-danger",
+        ".badge-success",
+        ".badge-warning",
+        ".tag-row"
+      ],
+      "classes": [
+        "badge",
+        "badge-danger",
+        "badge-success",
+        "badge-warning",
+        "tag-row"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--radius-round",
+        "--text-xs"
+      ]
+    },
+    {
+      "id": "tables",
+      "label": "数据表格",
+      "present": true,
+      "selectors": [
+        ".table-wrap",
+        "table",
+        "th",
+        "td",
+        "tr:hover td"
+      ],
+      "classes": [
+        "table-wrap"
+      ],
+      "elements": [
+        "table",
+        "tbody",
+        "td",
+        "th",
+        "thead",
+        "tr"
+      ],
+      "tokenReferences": [
+        "--bg-page",
+        "--border-color",
+        "--color-primary-bg",
+        "--text-body",
+        "--text-sm"
+      ]
+    },
+    {
+      "id": "cards",
+      "label": "卡片",
+      "present": true,
+      "selectors": [
+        ".card",
+        ".card-grid",
+        ".card-secondary",
+        ".card-title",
+        ".kpi-label",
+        ".kpi-num"
+      ],
+      "classes": [
+        "card",
+        "card-grid",
+        "card-secondary",
+        "card-title",
+        "kpi-label",
+        "kpi-num"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--bg-surface",
+        "--border-color",
+        "--radius-base",
+        "--space-12",
+        "--space-20",
+        "--text-body",
+        "--text-heading",
+        "--text-label",
+        "--text-xl",
+        "--text-xs",
+        "--weight-medium"
+      ]
+    },
+    {
+      "id": "steps",
+      "label": "步骤条",
+      "present": true,
+      "selectors": [
+        ".step",
+        ".step.active .step-indicator",
+        ".step-indicator",
+        ".step-label",
+        ".step::after",
+        ".step:last-child::after",
+        ".step.completed .step-indicator",
+        ".steps"
+      ],
+      "classes": [
+        "active",
+        "completed",
+        "step",
+        "step-indicator",
+        "step-label",
+        "steps"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--border-color",
+        "--color-primary",
+        "--color-success",
+        "--text-label",
+        "--text-secondary",
+        "--text-sm",
+        "--text-xs"
+      ]
+    },
+    {
+      "id": "pagination",
+      "label": "分页",
+      "present": true,
+      "selectors": [
+        ".pagination",
+        ".pagination button",
+        ".pagination button.active",
+        ".pagination button:hover"
+      ],
+      "classes": [
+        "active",
+        "pagination"
+      ],
+      "elements": [
+        "button"
+      ],
+      "tokenReferences": [
+        "--bg-surface",
+        "--border-color",
+        "--color-primary",
+        "--text-body",
+        "--text-sm",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "label": "面包屑",
+      "present": true,
+      "selectors": [
+        ".breadcrumb",
+        ".breadcrumb .current",
+        ".breadcrumb a",
+        ".breadcrumb a:hover"
+      ],
+      "classes": [
+        "breadcrumb",
+        "current"
+      ],
+      "elements": [
+        "a"
+      ],
+      "tokenReferences": [
+        "--color-primary",
+        "--text-13",
+        "--text-heading",
+        "--text-secondary"
+      ]
+    },
+    {
+      "id": "search",
+      "label": "搜索栏",
+      "present": true,
+      "selectors": [
+        ".search-bar",
+        ".search-bar input",
+        ".search-bar:focus-within"
+      ],
+      "classes": [
+        "search-bar"
+      ],
+      "elements": [
+        "input"
+      ],
+      "tokenReferences": [
+        "--bg-input",
+        "--border-color",
+        "--color-primary",
+        "--font-family",
+        "--radius-base",
+        "--text-sm",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "tree",
+      "label": "树形控件",
+      "present": true,
+      "selectors": [
+        ".tree-node",
+        ".tree-node.selected",
+        ".tree-node:hover",
+        ".tree-toggle",
+        ".tree-toggle.expanded"
+      ],
+      "classes": [
+        "expanded",
+        "selected",
+        "tree-node",
+        "tree-toggle"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--color-primary",
+        "--color-primary-bg",
+        "--radius-base",
+        "--text-sm",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "loading",
+      "label": "加载状态",
+      "present": true,
+      "selectors": [
+        ".spinner",
+        "@keyframes spin"
+      ],
+      "classes": [
+        "spinner"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--border-color",
+        "--color-primary"
+      ]
+    },
+    {
+      "id": "modal",
+      "label": "模态弹窗",
+      "present": true,
+      "selectors": [
+        ".modal-demo",
+        ".modal-demo .modal-body",
+        ".modal-demo .modal-footer",
+        ".modal-demo .modal-header",
+        ".modal-demo .modal-title"
+      ],
+      "classes": [
+        "modal-body",
+        "modal-demo",
+        "modal-footer",
+        "modal-header",
+        "modal-title"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--bg-surface",
+        "--border-color",
+        "--radius-lg",
+        "--shadow-lg",
+        "--space-10",
+        "--text-secondary",
+        "--text-sm",
+        "--text-xl",
+        "--weight-medium"
+      ]
+    },
+    {
+      "id": "carousel",
+      "label": "轮播",
+      "present": true,
+      "selectors": [
+        ".carousel-demo",
+        ".carousel-demo .carousel-dot",
+        ".carousel-demo .carousel-dot.active",
+        ".carousel-demo .carousel-dots",
+        ".carousel-demo .carousel-text"
+      ],
+      "classes": [
+        "active",
+        "carousel-demo",
+        "carousel-dot",
+        "carousel-dots",
+        "carousel-text"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--color-primary",
+        "--color-primary-hover",
+        "--radius-base",
+        "--text-xl",
+        "--weight-medium"
+      ]
+    },
+    {
+      "id": "upload",
+      "label": "上传区域",
+      "present": true,
+      "selectors": [
+        ".upload-zone",
+        ".upload-zone:hover"
+      ],
+      "classes": [
+        "upload-zone"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--border-color",
+        "--color-primary",
+        "--color-primary-bg",
+        "--radius-base",
+        "--text-secondary",
+        "--text-sm",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "进度条",
+      "present": true,
+      "selectors": [
+        ".progress-bar",
+        ".progress-fill",
+        ".progress-fill.success",
+        ".progress-fill.warning"
+      ],
+      "classes": [
+        "progress-bar",
+        "progress-fill",
+        "success",
+        "warning"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--border-color",
+        "--color-primary",
+        "--color-success",
+        "--color-warning",
+        "--radius-round"
+      ]
+    },
+    {
+      "id": "lists",
+      "label": "操作列表",
+      "present": true,
+      "selectors": [
+        ".action-list",
+        ".action-list li",
+        ".action-list li.active",
+        ".action-list li:hover"
+      ],
+      "classes": [
+        "action-list",
+        "active"
+      ],
+      "elements": [
+        "li",
+        "ul"
+      ],
+      "tokenReferences": [
+        "--color-primary",
+        "--color-primary-bg",
+        "--text-sm",
+        "--transition-base"
+      ]
+    },
+    {
+      "id": "theme-switcher",
+      "label": "主题切换器",
+      "present": true,
+      "selectors": [
+        ".ts",
+        ".ts-caret",
+        ".ts-menu",
+        ".ts-opt",
+        ".ts-opt-dot",
+        ".ts-opt-dot.blue",
+        ".ts-opt-dot.green",
+        ".ts-opt-dot.nari",
+        ".ts-opt.is-active",
+        ".ts-opt:hover",
+        ".ts-swatch",
+        ".ts-trigger",
+        ".ts-trigger:hover",
+        ".ts-wrap",
+        ".ts.is-open .ts-caret",
+        ".ts.is-open .ts-menu"
+      ],
+      "classes": [
+        "blue",
+        "green",
+        "is-active",
+        "is-open",
+        "nari",
+        "ts",
+        "ts-caret",
+        "ts-menu",
+        "ts-opt",
+        "ts-opt-dot",
+        "ts-swatch",
+        "ts-trigger",
+        "ts-wrap"
+      ],
+      "elements": [],
+      "tokenReferences": [
+        "--bg-surface",
+        "--border-color",
+        "--color-primary",
+        "--color-primary-bg",
+        "--shadow-base",
+        "--text-body",
+        "--text-sm",
+        "--transition-base",
+        "--weight-medium"
+      ]
+    },
+    {
+      "id": "keyboard",
+      "label": "键盘提示",
+      "present": false,
+      "selectors": [],
+      "classes": [],
+      "elements": [],
+      "tokenReferences": []
+    },
+    {
+      "id": "icons",
+      "label": "图标",
+      "present": true,
+      "selectors": [],
+      "classes": [],
+      "elements": [
+        "circle",
+        "path",
+        "svg"
+      ],
+      "tokenReferences": []
+    },
+    {
+      "id": "links",
+      "label": "链接",
+      "present": true,
+      "selectors": [
+        ".breadcrumb a",
+        ".breadcrumb a:hover"
+      ],
+      "classes": [],
+      "elements": [
+        "a"
+      ],
+      "tokenReferences": [
+        "--color-primary",
+        "--text-secondary"
+      ]
+    },
+    {
+      "id": "layout",
+      "label": "页面布局",
+      "present": true,
+      "selectors": [
+        ".page",
+        ".section",
+        ".section-title",
+        ".section-title .tag",
+        ".stats",
+        ".stat",
+        ".stat-label",
+        ".stat-num"
+      ],
+      "classes": [
+        "page",
+        "section",
+        "section-title",
+        "stat",
+        "stat-label",
+        "stat-num",
+        "stats",
+        "tag"
+      ],
+      "elements": [
+        "body",
+        "main",
+        "section",
+        "h2"
+      ],
+      "tokenReferences": [
+        "--bg-page",
+        "--bg-surface",
+        "--border-color",
+        "--font-family",
+        "--radius-base",
+        "--space-12",
+        "--text-13",
+        "--text-body",
+        "--text-heading",
+        "--text-label",
+        "--text-secondary",
+        "--text-sm",
+        "--text-xl",
+        "--weight-medium"
+      ]
+    }
+  ],
+  "literals": {
+    "colorExpressions": 5,
+    "pixelValues": 18,
+    "hardcodedFontFamilies": 0
+  }
+}

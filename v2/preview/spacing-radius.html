@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博瑞蓝 — Border Radius</title>
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    body { margin: 0; padding: 40px; background: var(--bg-surface); font-family: var(--font-family); }
+    .card { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; color: var(--text-heading); }
+    .desc { font-size: 14px; color: var(--text-secondary); margin: 0 0 32px; }
+    .section-title { font-size: 16px; font-weight: 500; color: var(--text-heading); margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .radius-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+    .radius-sample { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .radius-box { width: 120px; height: 120px; background: var(--color-primary-bg); border: 1px solid var(--color-primary); display: grid; place-items: center; font-size: 13px; color: var(--color-primary); font-family: var(--font-mono); }
+    .radius-label { font-size: 13px; color: var(--text-body); }
+    .radius-token { font-size: 12px; color: var(--text-label); font-family: var(--font-mono); }
+    .usage-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 24px; }
+    .usage-table th { text-align: left; padding: 8px 16px; background: var(--bg-page); border-bottom: 1px solid var(--border-color); font-weight: 500; color: var(--text-heading); }
+    .usage-table td { padding: 8px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-body); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>博瑞蓝 — Border Radius</h1>
+    <div class="desc">Border radius scale from smallest tags to pill-shaped badges.</div>
+
+    <div class="radius-grid">
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:4px">4px</div>
+        <div class="radius-label">Tag / Badge</div>
+        <div class="radius-token">--radius-sm</div>
+      </div>
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:12px">12px</div>
+        <div class="radius-label">Base Controls</div>
+        <div class="radius-token">--radius-base</div>
+      </div>
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:16px">16px</div>
+        <div class="radius-label">Modal / Drawer</div>
+        <div class="radius-token">--radius-lg</div>
+      </div>
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:999px">∞</div>
+        <div class="radius-label">Pill / Badge</div>
+        <div class="radius-token">--radius-round</div>
+      </div>
+    </div>
+
+    <div class="section-title">Usage by Component</div>
+    <table class="usage-table">
+      <tr><th>Component</th><th>Radius</th><th>Token</th></tr>
+      <tr><td>Buttons</td><td>12px</td><td>--radius-base</td></tr>
+      <tr><td>Input fields</td><td>12px</td><td>--radius-base</td></tr>
+      <tr><td>Cards</td><td>12px</td><td>--radius-base</td></tr>
+      <tr><td>Table cells</td><td>0px</td><td>—</td></tr>
+      <tr><td>Tree nodes</td><td>12px</td><td>--radius-base</td></tr>
+      <tr><td>Modal / Dialog</td><td>16px</td><td>--radius-lg</td></tr>
+      <tr><td>Flyout panel</td><td>16px</td><td>--radius-lg</td></tr>
+      <tr><td>Badge / Pill</td><td>999px</td><td>--radius-round</td></tr>
+      <tr><td>Tag / small indicator</td><td>4px</td><td>--radius-sm</td></tr>
+    </table>
+  </div>
+</body>
+</html>

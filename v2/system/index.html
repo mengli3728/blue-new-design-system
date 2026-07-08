@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="blue" data-color-scheme-mode="toggle">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JoinBright-Blue - 设计体系</title>
+  <style>
+:root {
+  --color-primary: #2C7CF5;
+  --color-primary-hover: #4091F9;
+  --color-primary-light: #EBF3FF;
+  --color-primary-bg: #ECF7FF;
+  --nav-gradient-from: #2C7CF5;
+  --nav-gradient-to: #57AAFE;
+  --bg-page: #F2F5F9;
+  --bg-surface: #FFFFFF;
+  --text-heading: #000000;
+  --text-body: #4A4A4A;
+  --text-secondary: #666666;
+  --text-label: #999999;
+  --border-color: #E5E9F0;
+  --font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+  --font-mono: "SF Mono", SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  --text-xxl: 20px; --text-xl: 16px; --text-sm: 14px; --text-13: 13px; --text-xs: 12px;
+  --weight-medium: 600; --weight-regular: 400;
+  --space-2: 2px; --space-4: 4px; --space-8: 8px; --space-10: 10px; --space-12: 12px;
+  --space-16: 16px; --space-18: 18px; --space-20: 20px; --space-24: 24px; --space-32: 32px;
+  --radius-sm: 4px; --radius-base: 12px; --radius-lg: 16px; --radius-round: 999px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-base: 0 2px 8px rgba(0,0,0,0.15);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.18);
+  --bg-overlay: rgba(0,0,0,0.5);
+  --transition-fast: 0.15s ease; --transition-base: 0.2s ease;
+
+  --od-page-bg: #F2F5F9;
+  --od-surface: #FFFFFF;
+  --od-text: #000000;
+  --od-muted: #666666;
+  --od-border: #E5E9F0;
+  --od-accent: #2C7CF5;
+  --od-radius: 12px;
+  --od-font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+  --od-font-display: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Roboto, "Segoe UI", Arial, sans-serif;
+}
+
+/* Theme: 国网绿 */
+[data-theme="green"] {
+  --color-primary: #00A187;
+  --color-primary-hover: #06BD9F;
+  --color-primary-light: #F4FFFF;
+  --color-primary-bg: #F0F6FA;
+  --nav-gradient-from: #00A187;
+  --nav-gradient-to: #06BD9F;
+  --color-primary-active: #00806B;
+  --od-accent: #00A187;
+}
+
+/* Theme: 南瑞蓝 */
+[data-theme="nari"] {
+  --color-primary: #003C78;
+  --color-primary-hover: #22487C;
+  --color-primary-light: #CFD6E1;
+  --color-primary-bg: #F0F6FA;
+  --nav-gradient-from: #003C78;
+  --nav-gradient-to: #22487C;
+  --color-primary-active: #002A55;
+  --od-accent: #003C78;
+}
+
+/* Dark color scheme */
+[data-color-scheme="dark"] {
+  --bg-page: #1A1D23;
+  --bg-surface: #24272E;
+  --bg-input: #2D3038;
+  --text-heading: #E8EAED;
+  --text-body: #C4C7CC;
+  --text-secondary: #9AA0A8;
+  --text-hint: #5F656E;
+  --text-label: #7B8088;
+  --text-danger: #FF7B7B;
+  --border-color: #333740;
+  --color-primary-light: #2A3A54;
+  --color-primary-bg: #1E2A3C;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.20);
+  --shadow-base: 0 2px 8px rgba(0,0,0,0.30);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.35);
+  --bg-overlay: rgba(0,0,0,0.6);
+  --od-page-bg: #1A1D23;
+  --od-surface: #24272E;
+  --od-text: #E8EAED;
+  --od-muted: #9AA0A8;
+  --od-border: #333740;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  margin: 0; min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-family);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 40px 0 80px; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: center; margin-bottom: 40px; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 48px; font-weight: 600; line-height: 1.1; color: var(--text-heading); }
+h2 { font-size: 20px; font-weight: 600; color: var(--text-heading); }
+.eyebrow { color: var(--od-accent); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.lead { margin-top: 12px; color: var(--text-secondary); font-size: 16px; line-height: 1.55; max-width: 600px; }
+
+/* Stats Row */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-12); margin-bottom: 40px; }
+.stat-card {
+  background: var(--bg-surface); border-radius: var(--radius-base);
+  padding: 16px 20px; display: flex; flex-direction: column; gap: 4px;
+  border: 1px solid var(--border-color);
+}
+.stat-card .stat-num { font-size: 28px; font-weight: var(--weight-medium); color: var(--text-heading); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat-card .stat-label { font-size: var(--text-13); color: var(--text-secondary); }
+
+/* Sections */
+.section { margin-bottom: 36px; }
+.section-title {
+  font-size: var(--text-xl); font-weight: var(--weight-medium);
+  color: var(--text-heading); margin: 0 0 16px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title .count { font-size: var(--text-13); font-weight: 400; color: var(--text-label); }
+
+/* Card Grid */
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-12); }
+.card {
+  display: flex; flex-direction: column;
+  background: var(--bg-surface); border: 1px solid var(--border-color);
+  border-radius: var(--radius-base); padding: var(--space-20);
+  transition: box-shadow var(--transition-base), transform var(--transition-fast);
+  position: relative; overflow: hidden;
+}
+.card:hover { box-shadow: var(--shadow-base); transform: translateY(-1px); }
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.card.cat-theme::before  { background: var(--color-primary); }
+.card.cat-color::before  { background: #7C5CFC; }
+.card.cat-type::before   { background: #5CC9A7; }
+.card.cat-space::before  { background: #F5A623; }
+.card.cat-comp::before   { background: var(--color-primary); }
+.card.cat-brand::before  { background: var(--text-heading); }
+.card h3 { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); }
+.card p { color: var(--text-secondary); font-size: var(--text-13); line-height: 1.5; margin-top: 4px; }
+
+.empty-hint { color: var(--text-secondary); font-size: 14px; font-style: italic; }
+
+@media (max-width: 820px) {
+  .page { width: min(100vw - 28px, 1100px); padding: 24px 0 60px; }
+  .hero { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+  .stats-row, .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 500px) {
+  .stats-row, .card-grid { grid-template-columns: 1fr; }
+}
+
+/* Navigation */
+.nav-topbar {
+  display: flex; align-items: center;
+  height: 50px; padding: 0 20px;
+  background: linear-gradient(90deg, var(--nav-gradient-from) -1%, var(--nav-gradient-to) 100%);
+  gap: 20px;
+}
+.nav-brand-logo { height: 28px; width: auto; display: block; }
+.nav-topbar-title { font-size: var(--text-xl); font-weight: var(--weight-medium); color: #fff; line-height: 50px; }
+.nav-topbar .nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+
+/* Theme Switcher */
+.theme-switcher { position: relative; }
+.theme-switcher__trigger {
+  display: flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 12px; border-radius: 6px; border: none;
+  background: var(--color-primary-bg); color: #000000;
+  font-size: 14px; font-weight: 600; font-family: var(--font-family); cursor: pointer;
+  transition: color 0.2s;
+}
+.theme-switcher__trigger:hover,
+.theme-switcher.is-open .theme-switcher__trigger { color: var(--color-primary); }
+.theme-switcher__swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.theme-switcher__swatch--blue { background: #2C7CF5; }
+.theme-switcher__swatch--green { background: #00A187; }
+.theme-switcher__swatch--nari { background: #003C78; }
+.theme-switcher__caret { width: 10px; height: 10px; flex-shrink: 0; }
+.theme-switcher__menu {
+  position: absolute; top: 100%; right: 0; margin-top: 6px;
+  min-width: 140px; background: var(--bg-surface); border: 1px solid var(--border-color);
+  border-radius: 8px; box-shadow: var(--shadow-base); padding: 4px;
+  list-style: none; z-index: 100; display: none;
+}
+.theme-switcher.is-open .theme-switcher__menu { display: block; }
+.theme-switcher__option {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 8px 12px; border: none; border-radius: 6px;
+  background: transparent; color: var(--text-body);
+  font-size: 13px; font-family: var(--font-family); cursor: pointer;
+}
+.theme-switcher__option:hover { background: var(--color-primary-bg); }
+.theme-switcher__option.is-active { color: var(--color-primary); font-weight: 600; }
+
+/* Color-Scheme Toggle */
+.color-scheme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0;
+  background: var(--color-primary-bg); border: none; border-radius: 6px;
+  cursor: pointer; color: #000000;
+  transition: color 0.2s; flex-shrink: 0;
+}
+.color-scheme-toggle:hover { color: var(--color-primary); }
+.color-scheme-toggle svg { width: 16px; height: 16px; display: block; }
+
+/* Dark mode: both toggle buttons get white semi-transparent background */
+[data-color-scheme="dark"] .theme-switcher__trigger,
+[data-color-scheme="dark"] .color-scheme-toggle {
+  background: rgba(255,255,255,0.2); color: #FFFFFF;
+}
+
+/* Hide toggle when a fixed color-scheme mode is chosen */
+[data-color-scheme-mode="light-only"] .color-scheme-toggle,
+[data-color-scheme-mode="dark-only"] .color-scheme-toggle {
+  display: none !important;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav-topbar">
+    <img class="nav-brand-logo" src="../logos/logo-white.png" alt="JoinBright-Blue">
+    <span class="nav-topbar-title">设计体系</span>
+    <div class="nav-right">
+      <div class="theme-switcher" data-theme-switcher>
+        <button class="theme-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="theme-switcher__swatch theme-switcher__swatch--blue" data-theme-current-swatch></span>
+          <span data-theme-current-label>博瑞蓝</span>
+          <svg class="theme-switcher__caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul class="theme-switcher__menu" role="listbox" aria-label="主题色">
+          <li role="presentation">
+            <button class="theme-switcher__option is-active" type="button" role="option" aria-selected="true" data-theme-value="blue" data-theme-label="博瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--blue"></span>博瑞蓝
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="green" data-theme-label="国网绿">
+              <span class="theme-switcher__swatch theme-switcher__swatch--green"></span>国网绿
+            </button>
+          </li>
+          <li role="presentation">
+            <button class="theme-switcher__option" type="button" role="option" aria-selected="false" data-theme-value="nari" data-theme-label="南瑞蓝">
+              <span class="theme-switcher__swatch theme-switcher__swatch--nari"></span>南瑞蓝
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="color-scheme-toggle" type="button" title="浅色/深色切换" aria-label="切换浅色深色模式">
+        <svg class="color-scheme-toggle__icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="3"/>
+          <path d="M8 1v1.5M8 13.5V15M2.5 8H1M15 8h-1.5M3.5 3.5l1 1M11.5 11.5l1 1M3.5 12.5l1-1M11.5 4.5l1-1"/>
+        </svg>
+        <svg class="color-scheme-toggle__icon-dark" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M13.5 10.5A6 6 0 0 1 5.5 2.5 5 5 0 1 0 13.5 10.5Z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="hero" data-od-id="hero">
+      <div>
+        <p class="eyebrow">Custom Design System</p>
+        <h1>JoinBright-Blue<br>设计体系</h1>
+        <p class="lead">面向企业后台与能源电力管控产品的互联网风格设计体系。以下为全部 26 份可视化预览卡片，按类别分组，点击即可查看对应组件规格与交互状态。</p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-row" data-od-id="stats-row">
+      <div class="stat-card"><span class="stat-num">3</span><span class="stat-label">主题色系</span></div>
+      <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">文字层级</span></div>
+      <div class="stat-card"><span class="stat-num">11</span><span class="stat-label">间距阶梯</span></div>
+      <div class="stat-card"><span class="stat-num">18</span><span class="stat-label">组件规格</span></div>
+    </div>
+
+    <!-- 主题总览 -->
+    <section class="section" data-od-id="section-theme">
+      <h2 class="section-title">主题总览 <span class="count">1 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-theme" href="../preview/themes.html">
+          <h3>三主题对照</h3>
+          <p>博瑞蓝 / 国网绿 / 南瑞蓝 三套主色并排对比，含按钮、导航条、侧栏</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 色板 -->
+    <section class="section" data-od-id="section-colors">
+      <h2 class="section-title">色板 <span class="count">3 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-color" href="../preview/colors-primary.html">
+          <h3>主色色阶</h3>
+          <p>#2C7CF5 主色渐变层级，从纯色到最浅背景色共 4 档，含使用场景标注</p>
+        </a>
+        <a class="card cat-color" href="../preview/colors-theme-light.html">
+          <h3>浅色主题</h3>
+          <p>浅灰蓝页面背景 #F2F5F9 + 白色卡片 + 完整表面层级，含模块布局示例</p>
+        </a>
+        <a class="card cat-color" href="../preview/colors-theme-dark.html">
+          <h3>深色主题适配</h3>
+          <p>深色模式下背景与文字反转，验证色板在暗色场景下的可读性与对比度</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 字体 -->
+    <section class="section" data-od-id="section-typography">
+      <h2 class="section-title">字体 <span class="count">1 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-type" href="../preview/typography-specimens.html">
+          <h3>文字层级标本</h3>
+          <p>12px–20px 五级字阶，中日英文混排示例，含字号、字重、颜色对照</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 间距 -->
+    <section class="section" data-od-id="section-spacing">
+      <h2 class="section-title">间距 <span class="count">3 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-space" href="../preview/spacing-tokens.html">
+          <h3>间距 Token</h3>
+          <p>2px–224px 共 11 级间距标尺，含控件安全距离、表单行距、卡片留白规则</p>
+        </a>
+        <a class="card cat-space" href="../preview/spacing-radius.html">
+          <h3>圆角规格</h3>
+          <p>4 级圆角：标签 2px / 控件 4px / 模态 8px / 药丸 999px，含组件对照</p>
+        </a>
+        <a class="card cat-space" href="../preview/spacing-shadows.html">
+          <h3>阴影层级</h3>
+          <p>sm / base / lg 三级阴影，卡片悬浮、模态、通知提示的标高差异</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 组件 -->
+    <section class="section" data-od-id="section-components">
+      <h2 class="section-title">组件 <span class="count">18 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-comp" href="kit.html">
+          <h3>组件套件 · 完整展示</h3>
+          <p>全 18 类组件集中展示 — 色板、字体、导航、按钮、表格、模态及更多</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-navigation.html">
+          <h3>导航系统</h3>
+          <p>渐变/浅色顶栏 + 侧栏 + 主题切换器，含激活态、多级菜单、响应式折叠</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-buttons.html">
+          <h3>按钮</h3>
+          <p>Primary / Secondary / Danger / Ghost 四种变体，含图标按钮与禁用态</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-inputs.html">
+          <h3>输入控件</h3>
+          <p>文本框 / 下拉 / 日期选择，含默认、聚焦、错误、禁用四态及表单组合</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-tables.html">
+          <h3>数据表格</h3>
+          <p>可排序表头 + 行悬浮高亮 + 状态标签列，固定 0px 圆角，自带 20px 内边距</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-pagination.html">
+          <h3>分页</h3>
+          <p>页码按钮 + 行数统计 + 激活态，右对齐布局，32×32 点击区域</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-cards.html">
+          <h3>卡片</h3>
+          <p>一级（无边框）/ 二级（带边框）双轨 + KPI 统计卡 + 使用指南，20px 内边距</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-modal.html">
+          <h3>模态弹窗</h3>
+          <p>遮罩 + 标题栏 + 内容区 + 操作栏，16px 大圆角，480px 默认宽度</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-tree.html">
+          <h3>树形控件</h3>
+          <p>展开/折叠箭头 0.2s 旋转 + 节点选中高亮 + 悬浮底色，14px 字号</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-badges.html">
+          <h3>徽标与标签</h3>
+          <p>成功/警告/危险三色状态徽标 + 数字角标 + Tag 标签，药丸造型</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-steps.html">
+          <h3>步骤条</h3>
+          <p>水平向导：默认/进行中/已完成三态，32px 圆形指示器 + 连接线</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-loading.html">
+          <h3>加载与空状态</h3>
+          <p>32px 旋转菊花 + 行内加载 + 空态占位 + 加载失败重试按钮</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-breadcrumb.html">
+          <h3>面包屑</h3>
+          <p>路径层级导航，13px 字号，`/` 分隔符，当前页加粗，链接悬浮变主色</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-search.html">
+          <h3>搜索栏</h3>
+          <p>36px 高度，图标 + 输入框组合，12px 圆角，聚焦主色边框</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-lists.html">
+          <h3>操作列表</h3>
+          <p>14px 行高 + 16px 内边距，0px 圆角，悬浮主色背景，点击主色填充</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-upload.html">
+          <h3>上传区域</h3>
+          <p>2px 虚线边框 + 32px/24px 内边距，悬浮变主色边框和背景，含已上传文件态</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-carousel.html">
+          <h3>轮播</h3>
+          <p>16:9 比例 + 12px 圆角 + 底部圆点指示器 + 左右导航箭头 + 5s 自动播放</p>
+        </a>
+        <a class="card cat-comp" href="../preview/components-slider.html">
+          <h3>进度与滑块</h3>
+          <p>8px 主色/成功/警告三色进度条 + 4px 滑轨 + 16px 拖拽圆点</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 品牌资产 -->
+    <section class="section" data-od-id="section-brand">
+      <h2 class="section-title">品牌资产 <span class="count">1 页</span></h2>
+      <div class="card-grid">
+        <a class="card cat-brand" href="../preview/brand-assets.html">
+          <h3>品牌标识</h3>
+          <p>双色 Logo 变体（default / white）+ 色板 + 使用场景说明</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 已生成模板 -->
+    <section class="section" data-od-id="section-templates">
+      <h2 class="section-title">已生成模板 <span class="count">0</span></h2>
+      <p class="empty-hint">暂无已生成的设计模板。使用此设计体系创建首个模板后将自动出现在此处。</p>
+    </section>
+
+  </main>
+  <!-- Theme Switcher Script -->
+  <script>
+    (function () {
+      var KEY = 'joinbright:theme';
+      var SWATCH_CLASSES = ['theme-switcher__swatch--blue', 'theme-switcher__swatch--green', 'theme-switcher__swatch--nari'];
+
+      function applyTheme(value) {
+        document.documentElement.setAttribute('data-theme', value);
+        try { localStorage.setItem(KEY, value); } catch (_) {}
+        document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+          var trigger = root.querySelector('.theme-switcher__trigger');
+          var label = root.querySelector('[data-theme-current-label]');
+          var swatch = root.querySelector('[data-theme-current-swatch]');
+          var match = root.querySelector('.theme-switcher__option[data-theme-value="' + value + '"]');
+          if (label && match) label.textContent = match.getAttribute('data-theme-label') || match.textContent.trim();
+          if (swatch) {
+            SWATCH_CLASSES.forEach(function (c) { swatch.classList.remove(c); });
+            swatch.classList.add('theme-switcher__swatch--' + value);
+          }
+          root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+            var isActive = opt.getAttribute('data-theme-value') === value;
+            opt.classList.toggle('is-active', isActive);
+            opt.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          root.classList.remove('is-open');
+        });
+      }
+
+      var saved;
+      try { saved = localStorage.getItem(KEY); } catch (_) {}
+      if (saved) applyTheme(saved);
+
+      document.querySelectorAll('[data-theme-switcher]').forEach(function (root) {
+        var trigger = root.querySelector('.theme-switcher__trigger');
+        if (trigger) {
+          trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = root.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        }
+        root.querySelectorAll('.theme-switcher__option').forEach(function (opt) {
+          opt.addEventListener('click', function () {
+            applyTheme(opt.getAttribute('data-theme-value'));
+          });
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+          if (!root.contains(e.target)) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-theme-switcher].is-open').forEach(function (root) {
+            root.classList.remove('is-open');
+            var t = root.querySelector('.theme-switcher__trigger');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    // Color-scheme mode + toggle
+    (function () {
+      var SCHEME_KEY = 'joinbright:color-scheme';
+      var MODE_KEY = 'joinbright:color-scheme-mode';
+
+      function setScheme(scheme) {
+        if (scheme === 'dark') {
+          document.documentElement.setAttribute('data-color-scheme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-color-scheme');
+        }
+        try { localStorage.setItem(SCHEME_KEY, scheme); } catch (_) {}
+        document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+          var lightIcon = btn.querySelector('.color-scheme-toggle__icon-light');
+          var darkIcon = btn.querySelector('.color-scheme-toggle__icon-dark');
+          if (scheme === 'dark') {
+            if (lightIcon) lightIcon.style.display = 'none';
+            if (darkIcon) darkIcon.style.display = 'block';
+            btn.setAttribute('title', '切换浅色模式');
+            btn.setAttribute('aria-label', '切换浅色模式');
+          } else {
+            if (lightIcon) lightIcon.style.display = 'block';
+            if (darkIcon) darkIcon.style.display = 'none';
+            btn.setAttribute('title', '切换深色模式');
+            btn.setAttribute('aria-label', '切换深色模式');
+          }
+        });
+      }
+
+      function applyMode(mode) {
+        document.documentElement.setAttribute('data-color-scheme-mode', mode);
+        try { localStorage.setItem(MODE_KEY, mode); } catch (_) {}
+        if (mode === 'dark-only') {
+          setScheme('dark');
+        } else {
+          var saved;
+          try { saved = localStorage.getItem(SCHEME_KEY); } catch (_) {}
+          setScheme(saved || 'light');
+        }
+      }
+
+      // Initialization — prefer saved mode, fall back to HTML attribute default
+      var savedMode;
+      try { savedMode = localStorage.getItem(MODE_KEY); } catch (_) {}
+      applyMode(savedMode || document.documentElement.getAttribute('data-color-scheme-mode') || 'toggle');
+
+      // Toggle button click handler
+      document.querySelectorAll('.color-scheme-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = document.documentElement.getAttribute('data-color-scheme-mode') || 'toggle';
+          if (mode !== 'toggle') return;
+          var current = document.documentElement.getAttribute('data-color-scheme');
+          setScheme(current === 'dark' ? 'light' : 'dark');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
